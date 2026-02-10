@@ -1,0 +1,81 @@
+// flex
+
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-fill {
+  flex: 1 0 0;
+  min-height: 0;
+  min-width: 0;
+}
+
+@mixin center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// text
+
+@mixin truncate($lines: 1) {
+  overflow: hidden;
+
+  @if $lines == 1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}
+
+// scrollbar
+
+@mixin hidden-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE и Edge Legacy */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+}
+
+// pseudoelements
+
+@mixin before($content: "") {
+  &::before {
+    content: $content;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    @content;
+  }
+}
+
+// responsive
+
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 720px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 720px) {
+    @content;
+  }
+}

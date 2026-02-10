@@ -1,0 +1,27 @@
+@use "../../styles/utils.scss" as *;
+
+.bareTextarea {
+  margin: -0.5rem;
+  padding: 0.5rem;
+
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-out;
+  cursor: text;
+  resize: none;
+
+  background: transparent;
+
+  &::placeholder {
+    color: var(--color-sec);
+  }
+
+  // state
+
+  &:hover {
+    background: color-mix(in srgb, transparent, var(--color-sec) 10%);
+  }
+
+  &:focus-within {
+    background: color-mix(in srgb, transparent, var(--color-sec) 10%);
+  }
+}

@@ -1,0 +1,50 @@
+@use "../../styles/utils.scss" as *;
+
+.overlay {
+  z-index: 23;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: color-mix(in srgb, transparent, var(--color-main) 25%);
+}
+
+.content {
+  z-index: 24;
+  position: fixed;
+  inset: 0;
+  max-width: 100w;
+  max-height: 100vh;
+
+  @include col;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+
+  pointer-events: none !important;
+}
+
+.contentCard {
+  position: relative;
+  width: var(--modal-width);
+  max-height: 100%;
+
+  @include col;
+  gap: 1.5rem;
+  padding: 2.5rem;
+
+  background: var(--color-bg);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.75rem 1.5rem
+      color-mix(in srgb, transparent, var(--color-main) 15%),
+    0 1.5rem 3rem color-mix(in srgb, transparent, var(--color-main) 15%);
+
+  pointer-events: auto;
+
+  .closer {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}

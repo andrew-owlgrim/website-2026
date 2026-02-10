@@ -1,0 +1,38 @@
+:root {
+  /* base colors */
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-gray-10: hsl(220 10 10);
+  --color-gray-20: hsl(220, 12%, 20%);
+  --color-gray-30: hsl(220, 14%, 30%);
+  --color-gray-40: hsl(220, 16%, 40%);
+  --color-gray-50: hsl(220, 16%, 50%);
+  --color-gray-60: hsl(220, 22%, 60%);
+  --color-gray-70: hsl(220, 26%, 70%);
+  --color-gray-80: hsl(220, 30%, 80%);
+  --color-gray-90: hsl(220, 35%, 90%);
+
+  /* ui colors */
+
+  --color-bg: var(--color-white);
+  --color-alt: var(--color-gray-10);
+  --color-surface: hsl(220 26 70 / 0.25);
+  --color-third: hsl(220 35 40 / 0.5);
+  --color-sec: hsl(220 40 20 / 0.75);
+  --color-primary: var(--color-gray-20);
+  --color-main: var(--color-gray-10);
+  --color-fx: var(--color-gray-50);
+}
+
+[data-theme="dark"] {
+  --color-bg: var(--color-gray-10);
+  --color-alt: var(--color-black);
+  --color-surface: color-mix(in srgb, transparent, var(--color-gray-90) 12%);
+  --color-third: color-mix(in srgb, transparent, var(--color-gray-90) 36%);
+  --color-sec: color-mix(in srgb, transparent, var(--color-gray-90) 75%);
+  --color-main: var(--color-gray-100);
+  --color-em: var(--color-gray-90);
+  --color-fx: var(--color-gray-50);
+}

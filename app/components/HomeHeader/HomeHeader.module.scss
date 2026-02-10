@@ -1,0 +1,73 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.HeaderBlock {
+  padding: 4rem 0;
+}
+
+.Header {
+  @include row;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.ImgWrapper {
+  position: relative;
+  aspect-ratio: 1;
+  align-self: stretch;
+  height: 100%;
+
+  & > * {
+    position: absolute;
+  }
+}
+
+.LogoWrapper {
+  position: absolute;
+  z-index: 1;
+  width: 3rem;
+  height: 3rem;
+
+  @include center-content;
+
+  background: var(--color-bg);
+  border-radius: 666px;
+
+  @include before;
+  &::before {
+    border-radius: 666px;
+    border: 1px solid var(--color-third);
+  }
+
+  & > * {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.Userpic {
+  width: 100%;
+  height: 100%;
+  border-radius: 666px;
+}
+
+.Content {
+  flex: 1 0 0;
+
+  @include col;
+  gap: 1rem;
+}
+
+.TextBlock {
+  @include col;
+}
+
+.ButtonsRow {
+  @include row;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.Controls {
+  @include row;
+  gap: 0.5rem;
+}

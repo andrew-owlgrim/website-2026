@@ -1,0 +1,83 @@
+@use "../../styles/utils.scss" as *;
+
+.Select {
+  position: relative;
+
+  @include row;
+  gap: 0.25rem;
+  padding: 0.75rem;
+
+  border-radius: var(--border-radius);
+  transition: var(--transition-sm);
+  cursor: pointer;
+  user-select: none;
+
+  @include before {
+    border: 1px solid var(--color-third);
+    border-radius: var(--border-radius);
+  }
+
+  // shape
+
+  &.square {
+    --border-radius: 0.75rem;
+  }
+  &.round {
+    --border-radius: 666px;
+  }
+
+  // state
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-surface);
+  }
+
+  &[data-state="open"] {
+    background: var(--color-surface);
+  }
+
+  // parts
+
+  & > span:first-child {
+    padding: 0 0.25rem;
+  }
+}
+
+.Content {
+  min-width: var(--radix-select-trigger-width);
+  max-height: 360px;
+
+  @include col;
+  gap: 0.25rem;
+  padding: 0.25rem;
+
+  border-radius: 0.75rem;
+  background: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+
+  user-select: none;
+}
+
+.Item {
+  @include row;
+  padding: 0.5rem;
+  transition: var(--transition-sm);
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-surface);
+  }
+
+  &[data-state="checked"] {
+    cursor: auto;
+    background: var(--color-primary);
+    color: var(--color-bg);
+  }
+
+  & > span {
+    padding: 0 0.25rem;
+  }
+}

@@ -1,0 +1,16 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.FooterBlock {
+  padding: 2.5rem 0;
+}
+
+.FooterContent {
+  @include row;
+  justify-content: space-between;
+  color: var(--color-sec);
+}
+
+.Links {
+  @include row;
+  gap: 1.5rem;
+}

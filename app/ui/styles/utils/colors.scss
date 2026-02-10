@@ -1,0 +1,22 @@
+@mixin calc-ui-colors {
+  --color-surface: color-mix(in srgb, transparent, var(--color-sec) 8%);
+  --color-surface-hover: color-mix(in srgb, transparent, var(--color-sec) 16%);
+  --color-surface-active: color-mix(in srgb, transparent, var(--color-sec) 24%);
+
+  --color-border: color-mix(in srgb, transparent, var(--color-sec) 24%);
+  --color-border-hover: color-mix(in srgb, transparent, var(--color-sec) 40%);
+  --color-border-active: color-mix(in srgb, transparent, var(--color-sec) 64%);
+
+  --color-inactive: color-mix(in srgb, transparent, var(--color-sec) 64%);
+
+  --color-main-hover: color-mix(
+    in srgb,
+    var(--color-main) 76%,
+    var(--color-sec) 24%
+  );
+  --color-main-active: color-mix(
+    in srgb,
+    var(--color-main) 60%,
+    var(--color-sec) 40%
+  );
+}

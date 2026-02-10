@@ -1,0 +1,64 @@
+/* Fonts */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap");
+
+@font-face {
+  font-family: "Onest";
+  src: url("../../fonts/Onest-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* font */
+
+  --font-family-main: "Onest", sans-serif;
+
+  /* headings size */
+
+  --fs-h1: 2.5rem;
+  --lh-h1: 3rem;
+
+  --fs-h2: 2rem;
+  --lh-h2: 2.5rem;
+
+  --fs-h3: 1.5rem;
+  --lh-h3: 2rem;
+
+  --fs-h4: 1.25rem;
+  --lh-h4: 1.75rem;
+
+  --fs-h5: 1rem;
+  --lh-h5: 1.5rem;
+
+  --fs-h6: 0.8rem;
+  --lh-h6: 1.25rem;
+
+  /* text size */
+
+  --fs-xl: 1.5rem;
+  --lh-xl: 2rem;
+
+  --fs-lg: 1.25rem;
+  --lh-lg: 1.75rem;
+
+  --fs-md: 1rem;
+  --lh-md: 1.5rem;
+
+  --fs-sm: 0.8rem;
+  --lh-sm: 1.25rem;
+
+  --fs-xs: 0.6rem;
+  --lh-xs: 1rem;
+
+  /* weight */
+
+  --weight-regular: 350;
+  --weight-medium: 450;
+  --weight-semibold: 525;
+  --weight-bold: 600;
+}

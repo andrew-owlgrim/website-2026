@@ -1,0 +1,193 @@
+@use "../../styles/utils.scss" as *;
+
+.Button {
+  // Base
+
+  position: relative;
+  flex-shrink: 0;
+
+  @include row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  --border-radius: 0.5rem;
+  border-radius: var(--border-radius);
+
+  outline: 1px solid transparent;
+  outline-offset: 2px;
+
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  user-select: none;
+
+  @include before;
+  &::before {
+    transition: all 0.2s ease-out;
+    border-radius: var(--border-radius);
+    pointer-events: none;
+  }
+
+  & > span {
+    padding: 0 0.25rem;
+    @include button;
+  }
+
+  &:focus-visible {
+    &::before {
+      border-color: var(--color-sec) !important;
+    }
+  }
+
+  // Size
+
+  --padding: 1rem;
+
+  &.xs {
+    --padding: 0.25rem;
+  }
+  &.sm {
+    --padding: 0.5rem;
+  }
+  &.md {
+    --padding: 0.75rem;
+  }
+  &.lg {
+    --padding: 1rem;
+  }
+  &.xl {
+    --padding: 1.25rem;
+  }
+
+  // Shape
+
+  &.round {
+    --border-radius: 666px;
+    padding: var(--padding);
+  }
+  &.capsule {
+    --border-radius: 666px;
+    padding: var(--padding) calc(var(--padding) + 0.5rem);
+  }
+  &.square {
+    --border-radius: 0.5rem;
+    padding: var(--padding);
+  }
+
+  // Danger
+
+  &.danger {
+    --color-primary: var(--color-danger);
+    --color-sec: var(--color-danger);
+    @include calc-ui-colors;
+  }
+
+  // Variants
+
+  // Fill
+
+  &.fill {
+    color: var(--color-bg);
+    background: var(--color-primary);
+
+    &:hover,
+    &:focus-visible {
+      background: color-mix(in srgb, var(--color-primary), var(--color-fx));
+    }
+
+    &:active {
+      background: var(--color-sec);
+    }
+
+    &:disabled {
+      background: var(--color-inactive);
+    }
+
+    &:focus-visible {
+      outline-color: var(--color-main-hover);
+    }
+  }
+
+  // Secondary
+
+  &.surface {
+    color: var(--color-main);
+    &::before {
+      border: 1px solid var(--color-border);
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: var(--color-surface);
+    }
+
+    &:active {
+      background: var(--color-surface-hover);
+    }
+
+    &:disabled {
+      color: var(--color-inactive);
+    }
+  }
+
+  // Tertiary
+
+  &.surfacesec {
+    color: var(--color-sec);
+    background: var(--color-surface);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--color-surface-hover);
+    }
+
+    &:active {
+      background: var(--color-surface-active);
+    }
+
+    &:disabled {
+      color: var(--color-inactive);
+    }
+  }
+
+  // Bare
+
+  &.ghost {
+    margin: calc(0px - var(--padding));
+    color: var(--color);
+    background: transparent;
+
+    &:hover,
+    &:focus-visible {
+      background: color-mix(in srgb, var(--color-sec) 10%, transparent);
+    }
+
+    &:active {
+      background: color-mix(in srgb, var(--color-sec) 20%, transparent);
+    }
+
+    &:disabled {
+      color: var(--color-inactive);
+    }
+  }
+
+  // Bare Tertiary
+  &.ghostsec {
+    margin: calc(0px - var(--padding));
+    color: var(--color-sec);
+    background: transparent;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--color-surface);
+    }
+
+    &:active {
+      background: var(--color-surface-hover);
+    }
+
+    &:disabled {
+      color: var(--color-inactive);
+    }
+  }
+}

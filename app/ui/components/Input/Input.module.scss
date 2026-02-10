@@ -1,0 +1,74 @@
+@use "../../styles/utils.scss" as *;
+
+.inputContainer {
+  position: relative;
+
+  @include row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+
+  background: var(--color-bg);
+  border-radius: 0.5rem;
+  outline: 1px solid transparent;
+  transition: all 0.2s ease-out;
+  cursor: text;
+
+  @include before;
+  &::before {
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+  }
+  input {
+    @include text;
+  }
+
+  // props
+
+  &.xs {
+    padding: 0.25rem;
+  }
+  &.sm {
+    padding: 0.5rem;
+  }
+  &.md {
+    padding: 0.75rem;
+  }
+  &.lg {
+    padding: 1rem;
+  }
+  &.xl {
+    padding: 1.25rem;
+  }
+
+  // state
+
+  &:hover,
+  &.focused {
+    background: color-mix(in srgb, var(--color-bg) 100%, var(--color-sec) 10%);
+  }
+
+  &.focused {
+    &::before {
+      border-color: var(--color-inactive);
+    }
+  }
+
+  // parts
+
+  & > input {
+    flex: 1 0 0;
+    min-width: 0;
+    width: auto;
+  }
+  & > input::placeholder {
+    color: var(--color-sec);
+  }
+
+  .inputButton {
+    margin: -0.5rem -0.5rem -0.5rem 0;
+    border-radius: 5px;
+  }
+}

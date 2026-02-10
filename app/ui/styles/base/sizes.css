@@ -1,0 +1,30 @@
+:root {
+  /* base */
+  --base-size: 16px;
+
+  /* steps */
+  --step-1: 1rem;
+  --step-2: 1.5rem;
+  --step-3: 2.5rem;
+  --step-4: 4rem;
+  --step-5: 6rem;
+  --step-6: 10rem;
+  --step-7: 16rem;
+  --step-8: 25rem;
+  --step-9: 40rem;
+  --step-10: 64rem;
+
+  /* breakpoints */
+
+  --ultrawide: 1920px;
+  --desktop: 1200px;
+  --tablet: 720px;
+  --mobile: 320px;
+
+  /* components; */
+
+  --content-width: 1080px;
+  --modal-width: 640px;
+  --dialog-width: 400px;
+  --popover-width: 240px;
+}
