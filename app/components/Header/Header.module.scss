@@ -1,0 +1,45 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.Header {
+  padding: 2rem 0;
+}
+
+.Content {
+  @include row;
+  align-items: center;
+
+  & > * {
+    @include row;
+    align-items: center;
+  }
+  & > .Left,
+  & > .Right {
+    flex: 1 0 0;
+  }
+}
+
+.Left {
+  @include row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Logo {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.BreadCrumbs_Chevron {
+  color: var(--color-sec);
+}
+
+.Breadcrumbs_Route {
+  font-weight: var(--weight-medium);
+}
+
+.Right {
+  @include row;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+}

@@ -17,6 +17,10 @@ import IconInstagram from "./icon-instagram.svg?react";
 import IconTelegram from "./icon-telegram.svg?react";
 import IconYoutube from "./icon-youtube.svg?react";
 import IconTiktok from "./icon-tiktok.svg?react";
+import ChevronLeft from "./chevron-left.svg?react";
+import ChevronRight from "./chevron-right.svg?react";
+import Globe from "./globe.svg?react";
+import MailFilled from "./mail-filled.svg?react";
 
 // Library
 
@@ -38,6 +42,10 @@ export const icons = {
   telegram: IconTelegram,
   youtube: IconYoutube,
   tiktok: IconTiktok,
+  "chevron-left": ChevronLeft,
+  "chevron-right": ChevronRight,
+  globe: Globe,
+  "mail-filled": MailFilled,
 } as const;
 
 export type IconName = keyof typeof icons;

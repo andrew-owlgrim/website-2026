@@ -3,8 +3,8 @@ import s from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer className={clsx("page-block", s.FooterBlock)}>
-      <div className={s.FooterContent}>
+    <footer className={clsx("page-block", s.Footer)}>
+      <div className={s.Content}>
         <div className={s.Links}>
           <button>Privacy policy & Terms of use</button>
           <button>Cookies settins</button>

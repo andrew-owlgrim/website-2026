@@ -10,6 +10,7 @@ import {
   ToggleSwitch,
   ToggleSwitchItem,
 } from "@/ui/components/ToggleSwitch/ToggleSwitch";
+import { Link } from "react-router";
 
 const HomeHeader = () => {
   const [language, setLanguage] = useState("en");
@@ -27,12 +28,14 @@ const HomeHeader = () => {
 
         <div className={s.Content}>
           <div className={s.TextBlock}>
-            <h1>Andrew Owlgrim</h1>
-            <h4>#Designer #Developer #Creator</h4>
+            <h2>Andrew Owlgrim</h2>
+            <h5>#Designer #Developer #Creator</h5>
           </div>
           <div className={s.ButtonsRow}>
             <Button shape="capsule">
-              <p>About me</p>
+              <Link to="/about">
+                <span>About me</span>
+              </Link>
             </Button>
             <Button shape="capsule" asChild>
               <a

@@ -1,10 +1,10 @@
 @use "@/ui/styles/utils.scss" as *;
 
-.FooterBlock {
-  padding: 2.5rem 0;
+.Footer {
+  padding: 2rem 0;
 }
 
-.FooterContent {
+.Content {
   @include row;
   justify-content: space-between;
   color: var(--color-sec);

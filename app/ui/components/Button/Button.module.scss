@@ -9,9 +9,8 @@
   @include row;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
 
-  --border-radius: 0.5rem;
+  --border-radius: 0.75rem;
   border-radius: var(--border-radius);
 
   outline: 1px solid transparent;
@@ -21,16 +20,16 @@
   cursor: pointer;
   user-select: none;
 
-  @include before;
-  &::before {
+  @include button;
+  @include before {
     transition: all 0.2s ease-out;
     border-radius: var(--border-radius);
     pointer-events: none;
   }
 
-  & > span {
+  & span,
+  & p {
     padding: 0 0.25rem;
-    @include button;
   }
 
   &:focus-visible {
@@ -67,10 +66,10 @@
   }
   &.capsule {
     --border-radius: 666px;
-    padding: var(--padding) calc(var(--padding) + 0.5rem);
+    padding: var(--padding) calc(var(--padding) + 0.375rem);
   }
   &.square {
-    --border-radius: 0.5rem;
+    --border-radius: 0.75rem;
     padding: var(--padding);
   }
 
@@ -150,7 +149,7 @@
     }
   }
 
-  // Bare
+  // Ghost
 
   &.ghost {
     margin: calc(0px - var(--padding));
@@ -159,15 +158,19 @@
 
     &:hover,
     &:focus-visible {
-      background: color-mix(in srgb, var(--color-sec) 10%, transparent);
+      background: var(--color-surface);
     }
 
     &:active {
-      background: color-mix(in srgb, var(--color-sec) 20%, transparent);
+      background: color-mix(
+        in srgb,
+        var(--color-surface) 75%,
+        var(--color-fx) 25%
+      );
     }
 
     &:disabled {
-      color: var(--color-inactive);
+      color: var(--color-third);
     }
   }
 
@@ -183,11 +186,15 @@
     }
 
     &:active {
-      background: var(--color-surface-hover);
+      background: color-mix(
+        in srgb,
+        var(--color-surface) 75%,
+        var(--color-fx) 25%
+      );
     }
 
     &:disabled {
-      color: var(--color-inactive);
+      color: var(--color-third);
     }
   }
 }

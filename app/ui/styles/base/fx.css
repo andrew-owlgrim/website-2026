@@ -8,15 +8,16 @@
   /* Shadows */
 
   --shadow-xs:
-    0 0.03rem 0.125rem hsl(220 10 0 / 0.15),
-    0 0.06rem 0.25rem hsl(220 10 0 / 0.15);
+    0 0.03rem 0.125rem hsl(220 40 10 / 0.15),
+    0 0.06rem 0.25rem hsl(220 40 10 / 0.15);
   --shadow-sm:
-    0 0.06rem 0.25rem hsl(220 10 0 / 0.15),
-    0 0.155rem 0.5rem hsl(220 10 0 / 0.15);
+    0 0.06rem 0.25rem hsl(220 40 10 / 0.15),
+    0 0.155rem 0.5rem hsl(220 40 10 / 0.15);
   --shadow-md:
-    0 0.155rem 0.5rem hsl(220 10 0 / 0.15), 0 0.25rem 1rem hsl(220 10 0 / 0.15);
+    0 0.155rem 0.5rem hsl(220 40 10 / 0.15),
+    0 0.25rem 1rem hsl(220 40 10 / 0.15);
   --shadow-lg:
-    0 0.25rem 1rem hsl(220 10 0 / 0.15), 0 0.5rem 2rem hsl(220 10 0 / 0.15);
+    0 0.25rem 1rem hsl(220 40 10 / 0.15), 0 0.5rem 2rem hsl(220 40 10 / 0.15);
   --shadow-xl:
-    0 0.5rem 2rem hsl(220 10 0 / 0.15), 0 1rem 4rem hsl(220 10 0 / 0.15);
+    0 0.5rem 2rem hsl(220 40 10 / 0.15), 0 1rem 4rem hsl(220 40 10 / 0.15);
 }

@@ -1,0 +1,33 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.Navbar {
+  @include row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.Item {
+  position: relative;
+
+  @include row;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+
+  transition: var(--transition-sm);
+
+  &:hover {
+    background: var(--color-surface);
+  }
+}
+
+.Indicator {
+  position: absolute;
+  left: calc(50% - 0.75rem);
+  bottom: -0.5rem;
+  width: 1.5rem;
+  height: 3px;
+
+  border-radius: 666px;
+  background: var(--color-primary);
+}

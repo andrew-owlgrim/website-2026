@@ -17,8 +17,8 @@
   /* ui colors */
 
   --color-bg: var(--color-white);
-  --color-alt: var(--color-gray-10);
-  --color-surface: hsl(220 26 70 / 0.25);
+  --color-alt: var(--color-gray-90);
+  --color-surface: hsl(220 26 70 / 0.33);
   --color-third: hsl(220 35 40 / 0.5);
   --color-sec: hsl(220 40 20 / 0.75);
   --color-primary: var(--color-gray-20);

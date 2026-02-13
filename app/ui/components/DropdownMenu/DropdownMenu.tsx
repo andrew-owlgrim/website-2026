@@ -19,13 +19,13 @@ interface DropdownMenuProps extends ComponentPropsWithoutRef<
   arrow?: boolean;
 }
 
-const DropdownMenuBase: FC<DropdownMenuProps> = ({
+export const DropdownMenu: FC<DropdownMenuProps> = ({
   trigger,
   children,
   className,
   side = "bottom",
-  align = "end",
-  sideOffset = 8,
+  align = "center",
+  sideOffset = 4, //todo: replace to rem units
   alignOffset = 0,
   arrow = false,
   ...props
@@ -65,7 +65,7 @@ interface DropdownMenuItemProps extends ComponentPropsWithoutRef<
   danger?: boolean;
 }
 
-const DropdownMenuItem: FC<DropdownMenuItemProps> = ({
+export const DropdownMenuItem: FC<DropdownMenuItemProps> = ({
   icon,
   className,
   text,
@@ -90,12 +90,3 @@ const DropdownMenuSeparator: FC<
 > = ({ className, ...props }) => (
   <Radix.Separator className={clsx(s.separator, className)} {...props} />
 );
-
-// Export
-
-export const DropdownMenu = Object.assign(DropdownMenuBase, {
-  Item: DropdownMenuItem,
-  Separator: DropdownMenuSeparator,
-});
-
-export default DropdownMenu;

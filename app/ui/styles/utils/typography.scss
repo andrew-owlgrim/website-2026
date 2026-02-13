@@ -3,7 +3,7 @@
 @mixin heading {
   letter-spacing: normal;
   text-transform: capitalize;
-  font-weight: var(--weight-semibold);
+  font-weight: var(--weight-medium);
 }
 
 @mixin h1 {
@@ -33,7 +33,7 @@
 }
 @mixin h6 {
   @include heading;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-h6);
   line-height: var(--lh-h6);
 }
 
@@ -41,7 +41,7 @@
 
 @mixin lead {
   letter-spacing: 0.2px;
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-regular);
   font-size: var(--fs-lg);
   line-height: var(--lh-lg);
 }

@@ -1,0 +1,50 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.BackgroundBlock {
+  padding: 4rem 0;
+}
+
+.BlockContent {
+  @include col;
+  gap: 2rem;
+}
+
+.CardsContainer {
+  @include row;
+  gap: 0.5rem;
+}
+
+.BackgroundCard {
+  flex: 1 0 0;
+  min-width: 33%;
+
+  @include col;
+  gap: 2rem;
+  padding: 2rem;
+
+  border-radius: 1.5rem;
+  background: var(--color-bg);
+}
+
+.CardIcon {
+  align-self: flex-start;
+  height: 4rem;
+  width: auto;
+}
+
+.CardTextBlock {
+  @include col;
+  gap: 0.5rem;
+}
+
+.CardTitle {
+  white-space: pre-line;
+}
+
+.CardDescription {
+  flex-grow: 1;
+}
+
+.CardDate {
+  color: var(--color-sec);
+}

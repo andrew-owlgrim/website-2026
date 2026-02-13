@@ -1,0 +1,38 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.ContactBlock {
+  padding: 4rem 0;
+}
+
+.BlockContent {
+  @include row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 4rem;
+  gap: 4rem;
+
+  border-radius: 1.5rem;
+  background: var(--color-bg);
+}
+
+.CTA {
+  max-width: 480px;
+  @include col;
+  gap: 2.5rem;
+}
+
+.TextBlock {
+  @include col;
+  gap: 0.5rem;
+}
+
+.Actions {
+  @include row;
+  gap: 0.5rem;
+}
+
+.Illustration {
+  height: 12rem;
+  height: auto;
+  flex-shrink: 0;
+}

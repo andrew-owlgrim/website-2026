@@ -26,7 +26,7 @@ const ProjectCard = ({
         <img className={s.Img} src={imgUrl ?? ""} alt={alt ?? ""} />
       </div>
       <div className={s.TextBlock}>
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <p>{description}</p>
       </div>
     </a>
