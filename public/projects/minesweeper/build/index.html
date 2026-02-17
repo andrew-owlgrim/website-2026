@@ -1,0 +1,148 @@
+<!doctype html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+
+    <title>Бесконченый сапёр</title>
+    <meta name="description" content="Just minesweeper" />
+    <meta name="author" content="Sivprod" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./icons.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header__elem">
+        <button class="btn btn_icon icon-restart"></button>
+      </div>
+      <div class="header__elem status">
+        <div class="stat-group">
+          <span class="caption">клетки</span>
+          <span id="cell-counter"></span>
+        </div>
+        <div class="stat-group">
+          <span class="caption">время</span>
+          <span id="time-counter"></span>
+        </div>
+      </div>
+      <div class="header__elem">
+        <button
+          href="#leaderboard"
+          class="btn btn_icon icon-leaderboard modal-trigger"
+        ></button>
+      </div>
+    </header>
+
+    <div class="welcome">
+      <button class="btn btn_filled btn_l start hide">Начать игру</button>
+    </div>
+
+    <div id="end-screen" class="end-screen modal hide">
+      <div class="card">
+        <div class="card__header">
+          <span>Игра окончена</span>
+          <button class="btn btn_icon icon-close modal__close"></button>
+        </div>
+        <div class="card__body">
+          <div class="stat-row">
+            <div class="stat-group">
+              <span class="caption">клетки</span>
+              <span id="total-cells"></span>
+            </div>
+            <div class="stat-group">
+              <span class="caption">время</span>
+              <span id="total-time"></span>
+            </div>
+            <div class="stat-group">
+              <span class="caption">счет</span>
+              <span id="pts"></span>
+            </div>
+          </div>
+          <div class="endscreen__place"></div>
+        </div>
+        <div class="card__footer">
+          <button class="btn btn_footer btn_filled end-screen__restart">
+            Еще раз
+          </button>
+          <button
+            href="#leaderboard"
+            class="btn btn_footer btn_bordered modal-trigger"
+          >
+            Рекорды
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="leaderboard" class="leaderboard modal hide">
+      <div class="card">
+        <div class="card__header">
+          <span>Рекорды</span>
+          <button class="btn btn_icon icon-close modal__close"></button>
+        </div>
+        <div class="card__body stat-row">
+          <div class="stat-col">
+            <span class="caption">Место</span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+          </div>
+          <div class="stat-col">
+            <span class="caption">клетки</span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+          </div>
+          <div class="stat-col">
+            <span class="caption">время</span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+          </div>
+          <div class="stat-col">
+            <span class="caption">счет</span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+            <span class="leaderboard__stat"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field-wrapper">
+      <table class="field" cellspacing="0" cellpadding="0"></table>
+    </div>
+
+    <button
+      href="#end-screen"
+      class="btn btn_bordered show-result modal-trigger hide"
+    >
+      Показать итог
+    </button>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

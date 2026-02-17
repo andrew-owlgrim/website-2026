@@ -1,7 +1,5 @@
 import Footer from "@/components/Footer/Footer";
-
-import s from "./home.module.scss";
-import type { Route } from "../../+types/root";
+import type { Route } from "../+types/root";
 import HomeHeader from "@/components/HomeHeader/HomeHeader";
 import ProjectsGrid from "@/components/ProjectsGrid/ProjectsGrid";
 

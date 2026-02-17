@@ -16,7 +16,8 @@
 :root {
   /* font */
 
-  --font-family-main: "Onest", sans-serif;
+  --font-main: "Onest", sans-serif;
+  --font-emoji: "Noto Emoji";
 
   /* headings size */
 

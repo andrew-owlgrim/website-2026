@@ -1,7 +1,5 @@
 import Header from "@/components/Header/Header";
-import type { Route } from "../../+types/root";
-import s from "./about.module.scss";
-import clsx from "clsx";
+import type { Route } from "../+types/root";
 import AboutHero from "@/components/AboutHero/AboutHero";
 import AboutBackground from "@/components/AboutBackground/AboutBackground";
 import AboutContact from "@/components/AboutContact/AboutContact";

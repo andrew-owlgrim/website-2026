@@ -1,0 +1,14 @@
+.Ghost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-family: var(--font-emoji);
+  color: var(--color-third);
+  font-size: 10rem;
+  line-height: 10rem;
+  text-align: end;
+  font-weight: 300;
+
+  user-select: none;
+}

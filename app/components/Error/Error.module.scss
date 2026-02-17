@@ -1,0 +1,34 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.ErrorBlock {
+  @include center-content;
+}
+
+.ErrorContent {
+  max-width: 480px;
+
+  @include col;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.Kaomoji {
+  white-space: nowrap;
+  align-self: center;
+  font-size: 8rem;
+  line-height: 8rem;
+  color: var(--color-bg);
+  margin-bottom: -5rem;
+  font-weight: var(--weight-bold);
+}
+
+.TextBlock {
+  @include col;
+  gap: 0.5rem;
+
+  text-align: center;
+}
+
+.Action {
+  min-width: 10rem;
+}
