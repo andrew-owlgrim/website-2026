@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import "./ui/styles/base.scss";
 import Error from "./components/Error/Error";
+import { UIProvider } from "./ui/provider/UIProvider";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -39,7 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <UIProvider>{children}</UIProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

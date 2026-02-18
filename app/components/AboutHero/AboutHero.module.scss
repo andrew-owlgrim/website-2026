@@ -23,6 +23,10 @@
   line-height: 1;
 }
 
+.Subtitle {
+  color: var(--color-alt-sec);
+}
+
 .ImgWrapper {
   position: relative;
   width: auto;
@@ -48,7 +52,7 @@
 
 .Actions {
   @include col;
-  gap: 0.5rem;
+  gap: 1rem;
   justify-content: center;
 }
 

@@ -10,8 +10,15 @@ import {
 } from "@/ui/components/DropdownMenu/DropdownMenu";
 import { Link as RouterLink } from "react-router";
 import clsx from "clsx";
+import { useUI } from "@/ui/provider/UIProvider";
 
 function Header() {
+  const { theme, setTheme } = useUI();
+
+  const switchTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
     <header className={clsx("page-block", s.Header)}>
       <div className={s.Content}>
@@ -48,8 +55,8 @@ function Header() {
             <DropdownMenuItem text="Рус" />
           </DropdownMenu>
 
-          <Button size="sm" variant="ghost">
-            <Icon name="sun" />
+          <Button size="sm" variant="ghost" onClick={switchTheme}>
+            <Icon name={theme === "light" ? "moon" : "sun"} />
           </Button>
         </div>
       </div>

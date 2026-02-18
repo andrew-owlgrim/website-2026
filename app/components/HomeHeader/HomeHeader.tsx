@@ -11,10 +11,15 @@ import {
   ToggleSwitchItem,
 } from "@/ui/components/ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router";
+import { useUI } from "@/ui/provider/UIProvider";
 
 const HomeHeader = () => {
   const [language, setLanguage] = useState("en");
-  const [theme, setTheme] = useState("light");
+  const { theme, setTheme } = useUI();
+
+  const switchTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <div className={clsx("page-block", s.HeaderBlock)}>
@@ -32,7 +37,7 @@ const HomeHeader = () => {
             <h5>#Designer #Developer #Creator</h5>
           </div>
           <div className={s.ButtonsRow}>
-            <Button shape="capsule">
+            <Button shape="capsule" asChild>
               <Link to="/about">
                 <span>About me</span>
               </Link>
@@ -78,7 +83,12 @@ const HomeHeader = () => {
             <SelectItem value="ru" text="Рус" />
           </Select>
 
-          <ToggleSwitch value={theme} onValueChange={setTheme} shape="round">
+          <ToggleSwitch
+            value={theme}
+            onValueChange={setTheme}
+            shape="round"
+            onClick={switchTheme}
+          >
             <ToggleSwitchItem value="light">
               <Icon name="sun" />
             </ToggleSwitchItem>
