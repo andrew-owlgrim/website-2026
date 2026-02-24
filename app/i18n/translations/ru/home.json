@@ -1,0 +1,23 @@
+{
+  "title": "Andrew Owlgrim",
+  "subtitle": "#Designer #Developer #Creator",
+  "about": "Обо мне",
+
+  "plannerTitle": "Planner",
+  "plannerDescription": "Принимайте решения, ставьте цели, планируйте расписание,\nподдерживайте мотивацию и отслеживайте прогресс",
+
+  "sillyKnightTitle": "Silly Knight",
+  "sillyKnightDescription": "Демо-платформер, созданный на движке Godot",
+
+  "circuitsTitle": "Circuits",
+  "circuitsDescription": "Создавайте свои устройства в игре о компьютерной логике",
+
+  "gameTheoryTitle": "Game theory",
+  "gameTheoryDescription": "Простая симуляция общества с кооперацией и обманом",
+
+  "brickBreakerTitle": "Brick Breaker",
+  "brickBreakerDescription": "Результат экспериментов с собственным игровым движком",
+
+  "minesweeperTitle": "Minesweeper",
+  "minesweeperDescription": "Классическая игра, но поле бесконечно. Мой первый проект"
+}

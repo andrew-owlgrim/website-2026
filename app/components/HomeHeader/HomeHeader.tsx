@@ -4,7 +4,7 @@ import s from "./HomeHeader.module.scss";
 import clsx from "clsx";
 import Button from "@/ui/components/Button/Button";
 import Icon from "@/ui/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Select, SelectItem } from "@/ui/components/Select/Select";
 import {
   ToggleSwitch,
@@ -12,14 +12,30 @@ import {
 } from "@/ui/components/ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router";
 import { useUI } from "@/ui/provider/UIProvider";
+import { useLocale } from "@/i18n";
+
+//
 
 const HomeHeader = () => {
-  const [language, setLanguage] = useState("en");
+  const { t, locale, switchLocale, l } = useLocale();
+
+  // theme
+
   const { theme, setTheme } = useUI();
 
   const switchTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
+
+  // language
+
+  const [language, setLanguage] = useState(locale);
+
+  useEffect(() => {
+    if (language !== locale) switchLocale(language);
+  }, [language]);
+
+  //
 
   return (
     <div className={clsx("page-block", s.HeaderBlock)}>
@@ -33,13 +49,13 @@ const HomeHeader = () => {
 
         <div className={s.Content}>
           <div className={s.TextBlock}>
-            <h2>Andrew Owlgrim</h2>
-            <h5>#Designer #Developer #Creator</h5>
+            <h2>{t.title}</h2>
+            <h5>{t.subTitle}</h5>
           </div>
           <div className={s.ButtonsRow}>
             <Button shape="capsule" asChild>
-              <Link to="/about">
-                <span>About me</span>
+              <Link to={l("/about")}>
+                <span>{t.about}</span>
               </Link>
             </Button>
             <Button shape="capsule" asChild>

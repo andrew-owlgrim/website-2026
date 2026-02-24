@@ -1,0 +1,23 @@
+{
+  "title": "Andrew Owlgrim",
+  "subtitle": "#Designer #Developer #Creator",
+  "about": "About me",
+
+  "plannerTitle": "Planner",
+  "plannerDescription": "Make decisions, set goals, plan your schedule,\nkeep motivation and monitor progress",
+
+  "sillyKnightTitle": "Silly Knight",
+  "sillyKnightDescription": "A platformer game demo project made with Godot engine",
+
+  "circuitsTitle": "Circuits",
+  "circuitsDescription": "Make your own devices in this game about computer logic",
+
+  "gameTheoryTitle": "Game Theory",
+  "gameTheoryDescription": "Simple simulation of society with cooperation and cheating",
+
+  "brickBreakerTitle": "Brick Breaker",
+  "brickBreakerDescription": "The result of experiments with custom game engine",
+
+  "minesweeperTitle": "Minesweeper",
+  "minesweeperDescription": "A classic game but the board is infinite. My first javascript project"
+}

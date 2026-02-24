@@ -1,0 +1,45 @@
+{
+  "header.about": "About me",
+  "header.background": "Background",
+  "header.skills": "Skills & Stack",
+  "header.portfolio": "Portfolio",
+  "header.manifesto": "Manifesto",
+  "header.contact": "Contact",
+
+  "hero.name": "Andrew\nOwlgrim",
+  "hero.tags": "#Designer #Developer #Creator",
+  "hero.description": "Hey! I’m Andrew. I specialize in custom design and front-end development. This website is my lab — a place where I share my projects, demos, experiments, case studies and sharpen new skills.",
+
+  "background.title": "Background",
+
+  "background.card1.occupation": "Youtube",
+  "background.card1.title": "Channel owner\n& Content maker",
+  "background.card1.description.0": "Created content for games, primarily mechanisms in Minecraft, and made videos about it. Full production cycle: scripts, sound, editing, graphics. Grew a ",
+  "background.card1.description.1": "channel",
+  "background.card1.description.2": " to ",
+  "background.card1.description.3": "160K+",
+  "background.card1.description.4": " subscribers and ",
+  "background.card1.description.5": "1M+",
+  "background.card1.description.6": " views.",
+  "background.card1.date": "2013—2017",
+
+  "background.card2.occupation": "Employment",
+  "background.card2.title": "Web designer\n& UX/UI Designer",
+  "background.card2.description.0": "Designed various websites and mobile apps while working at ",
+  "background.card2.description.1": "Limera",
+  "background.card2.description.2": " and later at ",
+  "background.card2.description.3": "dZencode",
+  "background.card2.description.4": ". Designed a dating service based on interest matching, an admin panels for a large Israeli utility company, and complex modules of a banking app.",
+  "background.card2.date": "2019—2022",
+  "background.card3.occupation": "Freelance",
+  "background.card3.title": "Frontend Developer\n& Web Designer",
+  "background.card3.description.0": "I went freelance to focus not only on design but also on development. In partnership with ",
+  "background.card3.description.1": "Ampersand IT",
+  "background.card3.description.2": ", we provide a full range of web development services. At the same time, I started working on my own projects.",
+  "background.card3.date": "2023—P.T.",
+
+  "contact.title": "Wanna work together?",
+  "contact.lead": "If you vibe with my mindset, and want to team-up or need my skills, just hit me up!",
+  "contact.email": "Email",
+  "contact.telegram": "Telegram"
+}

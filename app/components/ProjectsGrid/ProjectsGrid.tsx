@@ -8,16 +8,19 @@ import SillyKnightImg from "@/assets/img/projects-previews/silly-knight.jpg";
 import BrickBreakerImg from "@/assets/img/projects-previews/brick-breaker.jpg";
 import MinesweeperImg from "@/assets/img/projects-previews/minesweeper.jpg";
 import Ghost from "../Ghost/Ghost";
+import { useLocale } from "@/i18n";
+
+//
 
 const ProjectsGrid = () => {
+  const { t } = useLocale();
+
   return (
     <main className="page-block page-main">
       <div className={s.Grid}>
         <ProjectCard
-          title="Planner"
-          description={
-            "Make decisions, set goals, plan your schedule,\nkeep motivation and monitor progress"
-          }
+          title={t.plannerTitle}
+          description={t.plannerDescription}
           size="lg"
           imgUrl={PlannerImg}
           className={s.GridItem_lg}
@@ -26,8 +29,8 @@ const ProjectsGrid = () => {
           rel="noopener norefferer"
         />
         <ProjectCard
-          title="Silly Knight"
-          description="A platformer game demo project made with Godot engine"
+          title={t.sillyKnightTitle}
+          description={t.sillyKnightDescription}
           imgUrl={SillyKnightImg}
           size="sm"
           className={s.GridItem_sm}
@@ -36,8 +39,8 @@ const ProjectsGrid = () => {
           rel="noopener noreferrer"
         />
         <ProjectCard
-          title="Circuits"
-          description="Make your own devices in this game about computer logic"
+          title={t.circuitsTitle}
+          description={t.circuitsDescription}
           imgUrl={CircuitsImg}
           className={s.GridItem_md}
           href="/circuits"
@@ -45,8 +48,8 @@ const ProjectsGrid = () => {
           rel="noopener noreferrer"
         />
         <ProjectCard
-          title="Game Theory"
-          description="Simple simulation of society with cooperation and cheating"
+          title={t.gameTheoryTitle}
+          description={t.gameTheoryDescription}
           imgUrl={GameTheoryImg}
           className={s.GridItem_md}
           href="/game-theory"
@@ -54,8 +57,8 @@ const ProjectsGrid = () => {
           rel="noopener noreferrer"
         />
         <ProjectCard
-          title="Brick Breaker"
-          description="The result of experiments with custom game engine"
+          title={t.brickBreakerTitle}
+          description={t.brickBreakerDescription}
           imgUrl={BrickBreakerImg}
           size="sm"
           className={s.GridItem_sm}
@@ -64,8 +67,8 @@ const ProjectsGrid = () => {
           rel="noopener noreferrer"
         />
         <ProjectCard
-          title="Minesweeper"
-          description="A classic game but the board is infinite. My first javascript project"
+          title={t.minesweeperTitle}
+          description={t.minesweeperDescription}
           imgUrl={MinesweeperImg}
           size="sm"
           className={s.GridItem_sm}

@@ -4,6 +4,11 @@ import AboutHero from "@/components/AboutHero/AboutHero";
 import AboutBackground from "@/components/AboutBackground/AboutBackground";
 import AboutContact from "@/components/AboutContact/AboutContact";
 import Footer from "@/components/Footer/Footer";
+import { loadLocale } from "@/i18n";
+
+export async function loader({ params }: Route.LoaderArgs) {
+  return await loadLocale(params, ["common", "about"]);
+}
 
 export function meta({}: Route.MetaArgs) {
   return [
