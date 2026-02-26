@@ -8,12 +8,12 @@ import SillyKnightImg from "@/assets/img/projects-previews/silly-knight.jpg";
 import BrickBreakerImg from "@/assets/img/projects-previews/brick-breaker.jpg";
 import MinesweeperImg from "@/assets/img/projects-previews/minesweeper.jpg";
 import Ghost from "../Ghost/Ghost";
-import { useLocale } from "@/i18n";
+import { useI18n } from "@/i18n";
 
 //
 
 const ProjectsGrid = () => {
-  const { t } = useLocale();
+  const { t } = useI18n();
 
   return (
     <main className="page-block page-main">

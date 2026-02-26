@@ -1,5 +1,12 @@
 {
   "terms": "Terms of use",
   "cookies": "Cookies settings",
-  "copyright": "Andrew Owlgrim © 2026"
+  "copyright": "Andrew Owlgrim © 2026",
+
+  "error_message": "Oops!",
+  "error_details": "An unexpected error occurred",
+  "error_404_message": "404 - Page not found",
+  "error_404_details": "The page you are looking for was moved, renamed or might never existed",
+  "error_back": "Back",
+  "error_home": "Go to home page"
 }

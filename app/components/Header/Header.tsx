@@ -11,10 +11,10 @@ import {
 import { Link as RouterLink } from "react-router";
 import clsx from "clsx";
 import { useUI } from "@/ui/provider/UIProvider";
-import { useLocale } from "@/i18n";
+import { useI18n } from "@/i18n";
 
 function Header() {
-  const { t, l, switchLocale } = useLocale();
+  const { t, setLocale } = useI18n();
 
   // theme
 
@@ -31,13 +31,13 @@ function Header() {
       <div className={s.Content}>
         <div className={s.Left}>
           <Button variant="ghost" size="sm" asChild>
-            <RouterLink to={l("/")}>
+            <RouterLink to="/">
               <Logo className={s.Logo} />
             </RouterLink>
           </Button>
           <Icon name="chevron-right" className={s.BreadCrumbs_Chevron} />
           <Button variant="ghost" size="sm" asChild>
-            <RouterLink to={l("/about")}>
+            <RouterLink to="/about">
               <span>{t["header.about"]}</span>
             </RouterLink>
           </Button>
@@ -57,9 +57,9 @@ function Header() {
               </Button>
             }
           >
-            <DropdownMenuItem text="Eng" onClick={() => switchLocale("en")} />
-            <DropdownMenuItem text="Укр" onClick={() => switchLocale("uk")} />
-            <DropdownMenuItem text="Рус" onClick={() => switchLocale("ru")} />
+            <DropdownMenuItem text="Eng" onClick={() => setLocale("en")} />
+            <DropdownMenuItem text="Укр" onClick={() => setLocale("uk")} />
+            <DropdownMenuItem text="Рус" onClick={() => setLocale("ru")} />
           </DropdownMenu>
 
           <Button size="sm" variant="ghost" onClick={switchTheme}>

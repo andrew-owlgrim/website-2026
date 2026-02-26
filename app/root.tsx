@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import "./ui/styles/base.scss";
 import Error from "./components/Error/Error";
 import { UIProvider } from "./ui/provider/UIProvider";
+import { I18nProvider, useI18n } from "./i18n";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -40,7 +41,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <UIProvider>{children}</UIProvider>
+        <I18nProvider>
+          <UIProvider>{children}</UIProvider>
+        </I18nProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -53,14 +56,15 @@ export default function App() {
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
+  const { t } = useI18n();
+
+  let message = t.error_message;
+  let details = t.error_details;
 
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
-      message = "404 - Page not found";
-      details =
-        "The page you are looking for was moved, renamed or might never existed";
+      message = t.error_404_message;
+      details = t.error_404_details;
     } else {
       message = `${error.status} error`;
       details = error.statusText;

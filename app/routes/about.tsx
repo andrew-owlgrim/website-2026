@@ -4,11 +4,7 @@ import AboutHero from "@/components/AboutHero/AboutHero";
 import AboutBackground from "@/components/AboutBackground/AboutBackground";
 import AboutContact from "@/components/AboutContact/AboutContact";
 import Footer from "@/components/Footer/Footer";
-import { loadLocale } from "@/i18n";
-
-export async function loader({ params }: Route.LoaderArgs) {
-  return await loadLocale(params, ["common", "about"]);
-}
+import { useI18n } from "@/i18n";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -22,6 +18,8 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function AboutPage() {
+  useI18n("about");
+
   return (
     <div className="page">
       <Header />

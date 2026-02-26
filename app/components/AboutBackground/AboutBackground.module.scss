@@ -16,13 +16,13 @@
 
 .BackgroundCard {
   flex: 1 0 0;
-  min-width: 33%;
+  min-width: 0;
 
   @include col;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 2.5rem;
+  padding: 1.5rem;
 
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   background: var(--color-bg);
 }
 

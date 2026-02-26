@@ -1,5 +1,12 @@
 {
   "terms": "Условия использования",
   "cookies": "Настройки Cookies",
-  "copyright": "Andrew Owlgrim © 2026"
+  "copyright": "Andrew Owlgrim © 2026",
+
+  "error_message": "Упс!",
+  "error_details": "Что-то пошло не так",
+  "error_404_message": "404 - Страница не найдена",
+  "error_404_details": "Страница, которую вы ищете, перемещена, переименована, или ее вовсе не существует",
+  "error_back": "Назад",
+  "error_home": "На главную"
 }

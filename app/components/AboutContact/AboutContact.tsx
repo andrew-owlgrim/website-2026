@@ -3,10 +3,10 @@ import s from "./AboutContact.module.scss";
 import Icon from "@/ui/icons";
 import Illustation from "@/assets/img/about-page/about-contact-illustration.svg?react";
 import clsx from "clsx";
-import { useLocale } from "@/i18n";
+import { useI18n } from "@/i18n";
 
 export default function AboutContact() {
-  const { t } = useLocale();
+  const { t } = useI18n();
 
   return (
     <section id="contact" className={clsx("page-block", s.ContactBlock)}>

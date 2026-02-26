@@ -2,12 +2,7 @@ import Footer from "@/components/Footer/Footer";
 import type { Route } from "../+types/root";
 import HomeHeader from "@/components/HomeHeader/HomeHeader";
 import ProjectsGrid from "@/components/ProjectsGrid/ProjectsGrid";
-import { loadLocale, useLocale } from "@/i18n";
-import { useLoaderData } from "react-router";
-
-export async function loader({ params }: Route.LoaderArgs) {
-  return await loadLocale(params, ["common", "home"]);
-}
+import { useI18n } from "@/i18n";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -21,6 +16,8 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  useI18n("home");
+
   return (
     <div className="page">
       <HomeHeader />

@@ -1,5 +1,12 @@
 {
   "terms": "Умови використання",
   "cookies": "Налаштування Cookies",
-  "copyright": "Andrew Owlgrim © 2026"
+  "copyright": "Andrew Owlgrim © 2026",
+
+  "error_message": "Отакої!",
+  "error_details": "Сталася несподівана помилка",
+  "error_404_message": "404 - Сторінка не знайдена",
+  "error_404_details": "Сторінка, яку ви шукаєте, переміщена, перейменована, або її взагалі не існує",
+  "error_back": "Назад",
+  "error_home": "На головну"
 }

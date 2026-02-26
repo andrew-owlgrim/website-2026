@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import s from "./Footer.module.scss";
-import { useLocale } from "@/i18n";
+import { useI18n } from "@/i18n";
 
 const Footer = () => {
-  const { t } = useLocale();
+  const { t } = useI18n();
 
   return (
     <footer className={clsx("page-block", s.Footer)}>

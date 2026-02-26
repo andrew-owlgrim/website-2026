@@ -2,6 +2,7 @@ import { useLocation, useNavigate, Link } from "react-router";
 import clsx from "clsx";
 import s from "./Error.module.scss";
 import Button from "@/ui/components/Button/Button";
+import { useI18n } from "@/i18n";
 
 type ErrorProps = {
   message: string;
@@ -13,6 +14,8 @@ export default function Error(props: ErrorProps) {
   const location = useLocation();
 
   const canGoBack = location.key !== "default";
+
+  const { t } = useI18n();
 
   return (
     <main className={clsx("page-block", "full-height-block", s.ErrorBlock)}>
@@ -31,12 +34,12 @@ export default function Error(props: ErrorProps) {
             shape="capsule"
             onClick={() => navigate(-1)}
           >
-            <p>Back</p>
+            <p>{t.error_back}</p>
           </Button>
         ) : (
           <Button className={s.Action} variant="fill" shape="capsule" asChild>
             <Link to="/">
-              <p>Go to home page</p>
+              <p>{t.error_home}</p>
             </Link>
           </Button>
         )}

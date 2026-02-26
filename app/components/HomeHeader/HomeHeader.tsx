@@ -12,12 +12,13 @@ import {
 } from "@/ui/components/ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router";
 import { useUI } from "@/ui/provider/UIProvider";
-import { useLocale } from "@/i18n";
+import { useI18n } from "@/i18n";
+import type { Locale } from "@/i18n/config";
 
 //
 
 const HomeHeader = () => {
-  const { t, locale, switchLocale, l } = useLocale();
+  const { t, locale, setLocale } = useI18n();
 
   // theme
 
@@ -29,10 +30,10 @@ const HomeHeader = () => {
 
   // language
 
-  const [language, setLanguage] = useState(locale);
+  const [language, setLanguage] = useState<string>(locale);
 
   useEffect(() => {
-    if (language !== locale) switchLocale(language);
+    if (language !== locale) setLocale(language as Locale);
   }, [language]);
 
   //
@@ -50,11 +51,11 @@ const HomeHeader = () => {
         <div className={s.Content}>
           <div className={s.TextBlock}>
             <h2>{t.title}</h2>
-            <h5>{t.subTitle}</h5>
+            <h5>{t.subtitle}</h5>
           </div>
           <div className={s.ButtonsRow}>
             <Button shape="capsule" asChild>
-              <Link to={l("/about")}>
+              <Link to={"/about"}>
                 <span>{t.about}</span>
               </Link>
             </Button>

@@ -6,11 +6,10 @@ import Icon from "@/ui/icons";
 import Shape from "@/assets/img/about-page/shape-badge.svg?react";
 import Illustration from "@/assets/img/about-page/about-hero-illustration.svg?react";
 import clsx from "clsx";
-import { useLocale } from "@/i18n";
+import { useI18n } from "@/i18n";
 
 export default function AboutHero() {
-  const { t } = useLocale();
-  console.log(t);
+  const { t } = useI18n();
 
   return (
     <section className={clsx("page-block", s.HeroBlock)}>

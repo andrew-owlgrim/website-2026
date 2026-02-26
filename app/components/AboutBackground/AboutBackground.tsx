@@ -6,10 +6,10 @@ import IconWork from "@/assets/img/about-page/work.svg?react";
 import IconCode from "@/assets/img/about-page/code.svg?react";
 import Link from "@/ui/components/Link/Link";
 import clsx from "clsx";
-import { useLocale } from "@/i18n";
+import { useI18n } from "@/i18n";
 
 export default function AboutBackground() {
-  const { t } = useLocale();
+  const { t } = useI18n();
 
   return (
     <section id="background" className={clsx("page-block", s.BackgroundBlock)}>

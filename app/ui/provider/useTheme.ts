@@ -8,10 +8,6 @@ const KEY = "theme";
 
 // Utils
 
-function getStored(): Theme {
-  return (localStorage.getItem(KEY) as Theme) || "system";
-}
-
 function resolve(theme: Theme): "light" | "dark" {
   if (theme !== "system") return theme;
 
@@ -28,16 +24,11 @@ function apply(theme: Theme) {
 // Hook
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>("system");
-
-  // init on client
-  useEffect(() => {
-    const stored = (localStorage.getItem(KEY) as Theme) || "system";
-    setTheme(stored);
-  }, []);
+  const [theme, setTheme] = useState<Theme | null>(null);
 
   // apply & save
   useEffect(() => {
+    if (theme === null) return;
     localStorage.setItem(KEY, theme);
     apply(theme);
   }, [theme]);
