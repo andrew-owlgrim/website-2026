@@ -1,0 +1,79 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.SkillsBlock {
+  padding: 4rem 0;
+}
+
+.SkillsContent {
+  @include col;
+  gap: 1.5rem;
+}
+
+.SubBlocks {
+  @include row;
+  gap: 2.5rem;
+}
+
+.SkillsCards {
+  flex: 1 0 0;
+
+  @include row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  & > * {
+    flex: 1 0 0;
+    min-width: 30%;
+  }
+}
+
+.SkillCard {
+  @include col;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+
+  background: var(--color-bg);
+  border-radius: 1rem;
+}
+
+.SkillChart {
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+
+  :global(.donut-bg) {
+    color: var(--color-surface);
+  }
+  :global(.donut-value) {
+    color: var(--color-main);
+  }
+}
+
+.SkillText {
+  white-space: pre-line;
+  text-align: center;
+}
+
+.StackChips {
+  width: 400px;
+
+  @include row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0.5rem;
+}
+
+.Chip {
+  @include row;
+  align-items: center;
+  padding: 0.5rem;
+
+  p,
+  span {
+    padding: 0 0.25rem;
+  }
+
+  background: var(--color-bg);
+  border-radius: 0.5rem;
+}

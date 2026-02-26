@@ -37,7 +37,7 @@ function Header() {
           </Button>
           <Icon name="chevron-right" className={s.BreadCrumbs_Chevron} />
           <Button variant="ghost" size="sm" asChild>
-            <RouterLink to="/about">
+            <RouterLink to="/herobora">
               <span>{t["header.about"]}</span>
             </RouterLink>
           </Button>

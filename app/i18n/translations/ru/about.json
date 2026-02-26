@@ -39,5 +39,13 @@
   "contact.title": "Хотите поработать вместе?",
   "contact.lead": "Если вам близок мой подход и нужны мои навыки — пишите!",
   "contact.email": "Email",
-  "contact.telegram": "Telegram"
+  "contact.telegram": "Telegram",
+
+  "skills.title": "Скилы & Стек",
+  "skills.design": "UX/UI\nДизайн",
+  "skills.dev": "Фронтенд\nразработка",
+  "skills.video": "Монтаж\nвидео",
+  "skills.3d": "3D\nМоделирование",
+  "skills.psycho": "Психология &\nНейронауки",
+  "skills.music": "Музыка"
 }

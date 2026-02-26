@@ -39,5 +39,13 @@
   "contact.title": "Працюємо разом?",
   "contact.lead": "Якщо тобі близький мій підхід і потрібні мої навички — пиши!",
   "contact.email": "Email",
-  "contact.telegram": "Telegram"
+  "contact.telegram": "Telegram",
+
+  "skills.title": "Скіли & Стек",
+  "skills.design": "UX/UI\nДизайн",
+  "skills.dev": "Фронтенд\nрозробка",
+  "skills.video": "Монтаж\nвідео",
+  "skills.3d": "3D\nМоделювання",
+  "skills.psycho": "Психологія &\nНейронауки",
+  "skills.music": "Музика"
 }

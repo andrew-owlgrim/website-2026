@@ -41,5 +41,13 @@
   "contact.title": "Wanna work together?",
   "contact.lead": "If you vibe with my mindset, and want to team-up or need my skills, just hit me up!",
   "contact.email": "Email",
-  "contact.telegram": "Telegram"
+  "contact.telegram": "Telegram",
+
+  "skills.title": "Skills & Stack",
+  "skills.design": "UX/UI\nDesign",
+  "skills.dev": "Frontend\ndevelopment",
+  "skills.video": "Video\nproduction",
+  "skills.3d": "3D\nModelling",
+  "skills.psycho": "Psychology &\nNeuroscience",
+  "skills.music": "Music production"
 }

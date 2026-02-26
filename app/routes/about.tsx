@@ -5,6 +5,7 @@ import AboutBackground from "@/components/AboutBackground/AboutBackground";
 import AboutContact from "@/components/AboutContact/AboutContact";
 import Footer from "@/components/Footer/Footer";
 import { useI18n } from "@/i18n";
+import AboutSkills from "@/components/AboutSkills/AboutSkills";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -25,6 +26,7 @@ export default function AboutPage() {
       <Header />
       <AboutHero />
       <AboutBackground />
+      <AboutSkills />
       <AboutContact />
       <Footer />
     </div>
