@@ -134,7 +134,7 @@ export function useI18n(namespace?: string) {
   if (!ctx) throw new Error("useI18n must be used inside I18nProvider");
 
   useEffect(() => {
-    ctx.setNamespace(namespace ?? null);
+    if (namespace) ctx.setNamespace(namespace);
   }, [namespace]);
 
   return ctx;

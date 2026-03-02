@@ -1,17 +1,19 @@
 import { createContext, useContext } from "react";
 import { useTheme } from "./useTheme";
-// import { useLocale } from "./useLocale";
+import { useModals } from "./useModals";
 // import { useScreen } from "./useScreen";
 
 const UIContext = createContext<any>(null);
 
 export function UIProvider({ children }: { children: React.ReactNode }) {
   const theme = useTheme();
-  // const locale = useLocale();
+  const modals = useModals();
   // const screen = useScreen();
 
   return (
-    <UIContext.Provider value={{ ...theme }}>{children}</UIContext.Provider>
+    <UIContext.Provider value={{ ...theme, ...modals }}>
+      {children}
+    </UIContext.Provider>
   );
 }
 

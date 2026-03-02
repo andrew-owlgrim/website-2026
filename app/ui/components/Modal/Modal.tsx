@@ -4,72 +4,48 @@ import type React from "react";
 import { AnimatePresence, motion } from "motion/react";
 import s from "./Modal.module.scss";
 import clsx from "clsx";
-import { useModalManager } from "../ModalManager/ModalManager";
+import { useUI } from "../../provider/UIProvider";
 import Button from "../Button/Button";
+import Icon from "@/ui/icons";
 
 // Modal
 
-export interface ModalProps
-  extends ComponentPropsWithoutRef<typeof Dialog.Content> {
-  open?: boolean;
-  setOpen?: (open: boolean) => void;
+type ModalProps = ComponentPropsWithoutRef<typeof Dialog.Content> & {
   className?: string;
   children?: React.ReactNode;
+  id?: string;
+  closer?: boolean;
   title?: string;
   description?: string;
-  id?: string;
-  showCloser?: boolean;
-}
+};
 
 const Modal = ({
-  open,
-  setOpen = () => {},
   className,
   children,
+  id,
+  closer = false,
   title,
   description,
-  id,
-  showCloser = false,
   ...props
 }: ModalProps) => {
-  const modalManager = useModalManager();
+  const { register, unregister, isOpen, closeModal } = useUI();
 
-  // local bufer to defeat state race
-  const [localOpen, setLocalOpen] = useState(open ?? false);
-
-  // define if modal controlled by state or by manager
-  const isManaged = !!(id && modalManager);
-  const isControlled =
-    typeof open === "boolean" && typeof setOpen === "function";
-
-  // sync local state
   useEffect(() => {
-    if (isManaged && id) {
-      const next = modalManager.isOpen(id);
-      if (next !== localOpen) setLocalOpen(next);
-    } else if (isControlled) {
-      if (open !== localOpen) setLocalOpen(open);
-    }
-  }, [modalManager?.stack, open]);
+    register(id);
+    return () => unregister(id);
+  }, [id]);
 
-  // set state on radix interactions
+  const open = isOpen(id);
+
   const handleOpenChange = (next: boolean) => {
-    setLocalOpen(next);
-
-    if (isManaged && id) {
-      queueMicrotask(() => {
-        next ? modalManager.openModal(id) : modalManager.closeModal(id);
-      });
-    } else if (isControlled && setOpen) {
-      setOpen(next);
-    }
+    if (!next) closeModal(id);
   };
 
   return (
-    <Dialog.Root open={localOpen} onOpenChange={handleOpenChange}>
+    <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       <Dialog.Portal forceMount>
         <AnimatePresence>
-          {localOpen && (
+          {open && (
             <>
               <Dialog.Overlay asChild>
                 <motion.div
@@ -84,7 +60,9 @@ const Modal = ({
                 {title && (
                   <VisuallyHidden.Root>
                     <Dialog.Title>{title}</Dialog.Title>
-                    <Dialog.Description>{description}</Dialog.Description>
+                    {description && (
+                      <Dialog.Description>{description}</Dialog.Description>
+                    )}
                   </VisuallyHidden.Root>
                 )}
                 <motion.div
@@ -94,14 +72,16 @@ const Modal = ({
                   transition={{ duration: 0.25, ease: "easeOut" }}
                   className={clsx(s.contentCard, className)}
                 >
-                  {showCloser && (
+                  {closer && (
                     <Dialog.Close asChild>
                       <Button
                         size="xs"
-                        variant="tertiary"
-                        icon="x"
+                        variant="surface"
+                        shape="round"
                         className={s.closer}
-                      />
+                      >
+                        <Icon name="x" />
+                      </Button>
                     </Dialog.Close>
                   )}
                   {children}
