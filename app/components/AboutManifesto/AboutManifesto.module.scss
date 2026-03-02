@@ -1,0 +1,91 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.BackgroundBlock {
+  padding: 4rem 0;
+}
+
+.BlockContent {
+  position: relative;
+
+  @include col;
+  gap: 2rem;
+}
+
+.Citation {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @include row;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+
+  background: var(--color-bg);
+  border-radius: 1rem;
+  outline: 0.5rem solid var(--color-alt);
+
+  transform: rotate(2deg);
+}
+
+.Citation_TextBlock {
+  width: 20rem;
+
+  @include col;
+  gap: 0.5rem;
+
+  text-align: center;
+}
+
+.Citation_Source {
+  color: var(--color-sec);
+}
+
+.OpenQuote,
+.CloseQuote {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  color: var(--color-third);
+}
+
+.CloseQuote {
+  transform: rotate(180deg);
+}
+
+//
+
+.Manifesto {
+  // height: 30rem;
+
+  @include col;
+  padding: 6rem;
+  gap: 2.5rem;
+
+  background: var(--color-bg);
+  border-radius: 1rem;
+}
+
+.Slider {
+  width: 100%;
+}
+
+.Pagination {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: var(--color-sec);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "ss01";
+}
+
+.Chapter {
+  @include col;
+  gap: 1rem;
+}
+
+.SliderControls {
+  @include row;
+  align-items: center;
+  gap: 0.5rem;
+}

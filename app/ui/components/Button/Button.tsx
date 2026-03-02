@@ -7,6 +7,7 @@ type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl";
 type ButtonVariant =
   | "fill"
   | "surface"
+  | "alt-surface"
   | "surfacesec"
   | "border"
   | "bordersec"

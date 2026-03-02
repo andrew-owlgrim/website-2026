@@ -21,7 +21,12 @@ const ProjectCard = ({
   ...rest
 }: ProjectCardProps) => {
   return (
-    <a className={clsx(s.ProjectCard, className, s[size])} {...rest}>
+    <a
+      className={clsx(s.ProjectCard, className, s[size])}
+      target="_blank"
+      rel="norefferer nofollow"
+      {...rest}
+    >
       <div className={s.ImgWrapper}>
         <img className={s.Img} src={imgUrl ?? ""} alt={alt ?? ""} />
       </div>

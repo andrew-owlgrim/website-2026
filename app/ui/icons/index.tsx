@@ -21,6 +21,10 @@ import ChevronLeft from "./chevron-left.svg?react";
 import ChevronRight from "./chevron-right.svg?react";
 import Globe from "./globe.svg?react";
 import MailFilled from "./mail-filled.svg?react";
+import Dribbble from "./dribbble.svg?react";
+import Behance from "./behance.svg?react";
+import Github from "./github.svg?react";
+import Quote from "./quote.svg?react";
 
 // Library
 
@@ -46,6 +50,10 @@ export const icons = {
   "chevron-right": ChevronRight,
   globe: Globe,
   "mail-filled": MailFilled,
+  dribbble: Dribbble,
+  behance: Behance,
+  github: Github,
+  quote: Quote,
 } as const;
 
 export type IconName = keyof typeof icons;

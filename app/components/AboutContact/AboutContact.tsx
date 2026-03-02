@@ -17,13 +17,21 @@ export default function AboutContact() {
             <p className="lead">{t["contact.lead"]}</p>
           </div>
           <div className={s.Actions}>
-            <Button>
-              <Icon name="email" />
-              <span>{t["contact.email"]}</span>
+            <Button asChild>
+              <a href="mailto:andrey.trokhlebov@gmail.com">
+                <Icon name="email" />
+                <span>{t["contact.email"]}</span>
+              </a>
             </Button>
-            <Button>
-              <Icon name="telegram" />
-              <span>{t["contact.telegram"]}</span>
+            <Button asChild>
+              <a
+                href="https://t.me/AndrewOwlgrim"
+                target="_blank"
+                rel="nofollow norefferer"
+              >
+                <Icon name="telegram" />
+                <span>{t["contact.telegram"]}</span>
+              </a>
             </Button>
           </div>
         </div>

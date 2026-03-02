@@ -39,15 +39,64 @@
   "background.card3.date": "2023—P.T.",
 
   "contact.title": "Wanna work together?",
+
   "contact.lead": "If you vibe with my mindset, and want to team-up or need my skills, just hit me up!",
   "contact.email": "Email",
   "contact.telegram": "Telegram",
 
   "skills.title": "Skills & Stack",
+
   "skills.design": "UX/UI\nDesign",
   "skills.dev": "Frontend\ndevelopment",
   "skills.video": "Video\nproduction",
   "skills.3d": "3D\nModelling",
   "skills.psycho": "Psychology &\nNeuroscience",
-  "skills.music": "Music production"
+  "skills.music": "Music production",
+
+  "portfolio.title": "Portfolio",
+
+  "portfolio.project1.title": "Justfit",
+  "portfolio.project1.details": "Workout App UI/UX Template with research",
+  "portfolio.project2.title": "Limera",
+  "portfolio.project2.details": "Service for finding dates based on common interests",
+  "portfolio.project3.title": "Sivprod",
+  "portfolio.project3.details": "Brand design for content creators",
+  "portfolio.project4.title": "Mobile UI",
+  "portfolio.project4.details": "A collection of mobile apps UI designs and concepts",
+  "portfolio.project5.title": "Clevermind",
+  "portfolio.project5.details": "Website redesign",
+
+  "manifesto.title": "Manifesto",
+
+  "manifesto.citation.text": "An organism feeds on negative entropy.",
+  "manifesto.citation.source": "Erwin Schrödinger, What is Life",
+  "manifesto.pagination": "Part",
+
+  "manifesto.chapter.1.1": "Order is structure, logic, and the interconnection of elements",
+  "manifesto.chapter.1.2": ". Entropy is randomness, chaos, and unpredictability. Life creates order out of chaos, while death returns everything to a state of maximum entropy.",
+
+  "manifesto.chapter.2.1": "An organism, as an ordered system, does not exist in isolation — it is made up of simpler parts, it is part of something more complex, and it constantly interacts with its environment. Development and evolution are the pursuit of greater efficiency and a path toward higher levels of order.",
+
+  "manifesto.chapter.3.1": "My moral intuition is rooted in a simple principle: ",
+  "manifesto.chapter.3.2": "good is that which increases order",
+  "manifesto.chapter.3.3": "; bad is that which leads to destruction, uncertainty, and chaos. I see this principle as universal. It applies to everyday life: to thinking, to ethics, and consequently, to my professional activity.",
+
+  "manifesto.chapter.4.1": "A good product makes the world better",
+  "manifesto.chapter.4.2": ": it solves people’s problems and makes life easier, more beautiful, safer, or more interesting. It has meaning and intention, and its impact on the environment is positive. If a product survives by deceiving, imitating, manipulating, or exploiting human weaknesses — it is a bad product.",
+
+  "manifesto.chapter.5.1": "Good design is effective communication",
+  "manifesto.chapter.5.2": " between user and system. It is productive and goal-oriented. It feels pleasant, speaks in a polite tone, and looks aesthetically clean. It fits the context — situational, cultural, and temporal. It is honest, clearly communicates what matters, and avoids dark patterns. It is concise, with no unnecessary noise or distractions.",
+
+  "manifesto.chapter.6.1": "Good code is logically structured, easy to read, maintain, and extend",
+  "manifesto.chapter.6.2": ". At the same time, it should be optimized — because the ability to solve problems with minimal energy is a trait of the most adaptive systems.",
+
+  "manifesto.chapter.7.1": "I see my role as bringing order into environments",
+  "manifesto.chapter.7.2": " and resisting entropy through my work — through code, interfaces, and software products",
+  "manifesto.chapter.7.3": "To solve problems and make decisions, ",
+  "manifesto.chapter.7.4": "I look for the essence of things",
+  "manifesto.chapter.7.5": " and rely on more fundamental principles to find the right answer.",
+  "manifesto.chapter.7.6": "I pay attention to detail",
+  "manifesto.chapter.7.7": ", because every complex system is made up of small parts working together.",
+  "manifesto.chapter.7.8": "I consider all systems in context",
+  "manifesto.chapter.7.9": ", taking into account their structure and environment, to achieve efficient interaction and harmony."
 }

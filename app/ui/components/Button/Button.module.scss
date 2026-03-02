@@ -80,121 +80,142 @@
     --color-sec: var(--color-danger);
     @include calc-ui-colors;
   }
+}
 
-  // Variants
+// Variants
 
-  // Fill
+// Fill
 
-  &.fill {
-    color: var(--color-bg);
-    background: var(--color-primary);
+.fill {
+  color: var(--color-bg);
+  background: var(--color-primary);
 
+  &:hover,
+  &:focus-visible {
+    background: color-mix(in srgb, var(--color-primary), var(--color-fx));
+  }
+
+  &:active {
+    background: var(--color-sec);
+  }
+
+  &:disabled {
+    background: var(--color-inactive);
+  }
+
+  &:focus-visible {
+    outline-color: var(--color-main-hover);
+  }
+}
+
+// Secondary
+
+.surface {
+  background: var(--color-bg);
+  color: var(--color-main);
+  &::before {
+    border: 1px solid var(--color-third);
+  }
+
+  &:not(:disabled) {
     &:hover,
     &:focus-visible {
-      background: color-mix(in srgb, var(--color-primary), var(--color-fx));
+      background: var(--color-alt);
     }
 
     &:active {
-      background: var(--color-sec);
-    }
-
-    &:disabled {
-      background: var(--color-inactive);
-    }
-
-    &:focus-visible {
-      outline-color: var(--color-main-hover);
+      background: hsl(from var(--color-alt) h s calc(l - 10));
     }
   }
 
-  // Secondary
-
-  &.surface {
-    color: var(--color-main);
-    &::before {
-      border: 1px solid var(--color-border);
-    }
-
-    &:hover,
-    &:focus-visible {
-      background: var(--color-surface);
-    }
-
-    &:active {
-      background: var(--color-surface-hover);
-    }
-
-    &:disabled {
-      color: var(--color-inactive);
-    }
+  &:disabled {
+    color: var(--color-third);
   }
+}
 
-  // Tertiary
+.alt-surface {
+  color: var(--color-main);
+  background: var(--color-bg);
 
-  &.surfacesec {
-    color: var(--color-sec);
+  &:hover,
+  &:focus-visible {
     background: var(--color-surface);
-
-    &:hover,
-    &:focus-visible {
-      background: var(--color-surface-hover);
-    }
-
-    &:active {
-      background: var(--color-surface-active);
-    }
-
-    &:disabled {
-      color: var(--color-inactive);
-    }
   }
 
-  // Ghost
-
-  &.ghost {
-    margin: calc(0px - var(--padding));
-    color: var(--color);
-    background: transparent;
-
-    &:hover,
-    &:focus-visible {
-      background: var(--color-surface);
-    }
-
-    &:active {
-      background: color-mix(
-        in srgb,
-        var(--color-surface) 75%,
-        var(--color-fx) 25%
-      );
-    }
-
-    &:disabled {
-      color: var(--color-third);
-    }
+  &:active {
+    background: color-mix(in srgb, var(--color-surface), var(--color-fx) 25%);
   }
 
-  // Bare Tertiary
-  &.ghostsec {
-    margin: calc(0px - var(--padding));
-    color: var(--color-sec);
-    background: transparent;
+  &:disabled {
+    color: var(--color-third);
+  }
+}
 
-    &:hover,
-    &:focus-visible {
-      background: var(--color-surface);
-    }
+// Tertiary
 
-    &:active {
-      background: color-mix(
-        in srgb,
-        var(--color-surface) 75%,
-        var(--color-fx) 25%
-      );
-    }
+.surfacesec {
+  color: var(--color-sec);
+  background: var(--color-surface);
 
-    &:disabled {
-      color: var(--color-third);
-    }
+  &:hover,
+  &:focus-visible {
+    background: var(--color-surface-hover);
+  }
+
+  &:active {
+    background: var(--color-surface-active);
+  }
+
+  &:disabled {
+    color: var(--color-inactive);
+  }
+}
+
+// Ghost
+
+.ghost {
+  margin: calc(0px - var(--padding));
+  color: var(--color);
+  background: transparent;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-surface);
+  }
+
+  &:active {
+    background: color-mix(
+      in srgb,
+      var(--color-surface) 75%,
+      var(--color-fx) 25%
+    );
+  }
+
+  &:disabled {
+    color: var(--color-third);
+  }
+}
+
+// Bare Tertiary
+.ghostsec {
+  margin: calc(0px - var(--padding));
+  color: var(--color-sec);
+  background: transparent;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-surface);
+  }
+
+  &:active {
+    background: color-mix(
+      in srgb,
+      var(--color-surface) 75%,
+      var(--color-fx) 25%
+    );
+  }
+
+  &:disabled {
+    color: var(--color-third);
   }
 }
