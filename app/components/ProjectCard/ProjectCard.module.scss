@@ -85,9 +85,10 @@
   @include col;
   padding: 1rem;
   gap: 0.5rem;
+  max-width: 360px;
 
   & > p {
-    height: 2lh;
     white-space: pre-line;
+    @include truncate(2);
   }
 }

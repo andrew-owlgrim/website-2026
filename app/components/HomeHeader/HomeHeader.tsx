@@ -14,6 +14,7 @@ import { Link } from "react-router";
 import { useUI } from "@/ui/provider/UIProvider";
 import { useI18n } from "@/i18n";
 import type { Locale } from "@/i18n/config";
+import { SiteSettings } from "../SiteSettings/SiteSettings";
 
 //
 
@@ -22,7 +23,7 @@ const HomeHeader = () => {
 
   // theme
 
-  const { theme, setTheme } = useUI();
+  const { theme, setTheme, screen } = useUI();
 
   const switchTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -40,11 +41,20 @@ const HomeHeader = () => {
 
   return (
     <div className={clsx("page-block", s.HeaderBlock)}>
+      {screen !== "desktop" && (
+        <div className={s.MobileTopRow}>
+          <Logo className={s.Logo} />
+          <SiteSettings size="sm" />
+        </div>
+      )}
+
       <header className={s.Header}>
         <div className={s.ImgWrapper}>
-          <div className={s.LogoWrapper}>
-            <Logo />
-          </div>
+          {screen === "desktop" && (
+            <div className={s.LogoWrapper}>
+              <Logo className={s.Logo} />
+            </div>
+          )}
           <img className={s.Userpic} src={userpicUrl} alt="Andrew's image" />
         </div>
 
@@ -88,33 +98,7 @@ const HomeHeader = () => {
             </Button>
           </div>
         </div>
-        <div className={s.Controls}>
-          <Select
-            value={language}
-            onValueChange={setLanguage}
-            placeholder="Language"
-            shape="round"
-          >
-            <SelectItem value="en" text="Eng" />
-            <SelectItem value="uk" text="Укр" />
-            <SelectItem value="ru" text="Рус" />
-          </Select>
-
-          <ToggleSwitch
-            value={theme}
-            onValueChange={setTheme}
-            shape="round"
-            onClick={switchTheme}
-          >
-            <ToggleSwitchItem value="light">
-              <Icon name="sun" />
-            </ToggleSwitchItem>
-
-            <ToggleSwitchItem value="dark">
-              <Icon name="moon" />
-            </ToggleSwitchItem>
-          </ToggleSwitch>
-        </div>
+        {screen === "desktop" && <SiteSettings size="lg" />}
       </header>
     </div>
   );

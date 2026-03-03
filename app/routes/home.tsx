@@ -3,6 +3,7 @@ import type { Route } from "../+types/root";
 import HomeHeader from "@/components/HomeHeader/HomeHeader";
 import ProjectsGrid from "@/components/ProjectsGrid/ProjectsGrid";
 import { useI18n } from "@/i18n";
+import { useUI } from "@/ui/provider/UIProvider";
 
 export function meta({}: Route.MetaArgs) {
   return [

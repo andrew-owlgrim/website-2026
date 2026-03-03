@@ -9,6 +9,7 @@ import BrickBreakerImg from "@/assets/img/projects-previews/brick-breaker.jpg";
 import MinesweeperImg from "@/assets/img/projects-previews/minesweeper.jpg";
 import Ghost from "../Ghost/Ghost";
 import { useI18n } from "@/i18n";
+import clsx from "clsx";
 
 //
 
@@ -76,7 +77,7 @@ const ProjectsGrid = () => {
           target="_blank"
           rel="noopener noreferrer"
         />
-        <Ghost className={s.GridItem_sm} />
+        <Ghost className={clsx(s.GridItem_sm, s.Ghost)} />
       </div>
     </main>
   );

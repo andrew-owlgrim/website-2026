@@ -8,30 +8,21 @@
   border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.2s ease-out;
-  text-transform: capitalize;
+  // text-transform: capitalize;
 
-  outline: 1px solid transparent;
-  outline-offset: -0.25rem;
+  font-weight: var(--weight-medium);
+  text-decoration: underline;
+  text-decoration-color: var(--color-third);
+  text-underline-offset: 3px;
+  transition: all 0.2s ease-out;
 
   &:hover,
   &:focus-visible {
-    span {
-      text-decoration-color: var(--color-sec);
-      text-decoration-skip-ink: none;
-    }
+    text-decoration-color: var(--color-sec);
+    text-decoration-skip-ink: none;
   }
 
   &:focus-visible {
     background: var(--color-surface);
-  }
-
-  // Parts
-
-  span {
-    font-weight: var(--weight-medium);
-    text-decoration: underline;
-    text-decoration-color: var(--color-third);
-    text-underline-offset: 3px;
-    transition: all 0.2s ease-out;
   }
 }

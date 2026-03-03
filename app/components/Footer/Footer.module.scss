@@ -1,16 +1,43 @@
 @use "@/ui/styles/utils.scss" as *;
 
 .Footer {
-  padding: 2rem 0;
 }
 
 .Content {
+  position: relative;
+  padding: 1.5rem 0;
   @include row;
   justify-content: space-between;
   color: var(--color-sec);
+
+  @include before {
+    border-top: 1px solid var(--color-third);
+  }
+
+  :global(.link:hover) {
+    color: var(--color-main);
+  }
 }
 
 .Links {
   @include row;
   gap: 1.5rem;
+}
+
+@include mobile {
+  .Content {
+    flex-direction: column;
+    justify-content: initial;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .Links {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    & > *:first-child {
+      flex-basis: 100%;
+    }
+  }
 }

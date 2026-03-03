@@ -5,6 +5,7 @@ import Modal from "@/ui/components/Modal/Modal";
 import PrivacyPolicy from "../Terms/PrivacyPolicy";
 import TermsOfUse from "../Terms/TermsOfUse";
 import { useUI } from "@/ui/provider/UIProvider";
+import Link from "@/ui/components/Link/Link";
 
 const Footer = () => {
   const { t } = useI18n();
@@ -14,9 +15,15 @@ const Footer = () => {
     <footer className={clsx("page-block", s.Footer)}>
       <div className={s.Content}>
         <div className={s.Links}>
-          <button onClick={() => openModal("terms")}>{t.terms}</button>
-          <button onClick={() => openModal("privacy")}>{t.privacy}</button>
-          <button>{t.cookies}</button>
+          <Link asChild>
+            <button onClick={() => openModal("terms")}>{t.terms}</button>
+          </Link>
+          <Link asChild>
+            <button onClick={() => openModal("privacy")}>{t.privacy}</button>
+          </Link>
+          <Link asChild>
+            <button>{t.cookies}</button>
+          </Link>
         </div>
         <p className="copyright">{t.copyright}</p>
       </div>

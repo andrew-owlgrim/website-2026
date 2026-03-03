@@ -1,7 +1,8 @@
 @use "@/ui/styles/utils.scss" as *;
 
 .HeaderBlock {
-  padding: 4rem 0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .Header {
@@ -16,6 +17,13 @@
   align-self: stretch;
   height: 100%;
 
+  @include before;
+  &::before {
+    border-radius: 666px;
+    border: 1px solid var(--color-third);
+    z-index: 1;
+  }
+
   & > * {
     position: absolute;
   }
@@ -23,7 +31,7 @@
 
 .LogoWrapper {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   width: 3rem;
   height: 3rem;
 
@@ -67,7 +75,42 @@
   align-items: center;
 }
 
-.Controls {
+.MobileTopRow {
   @include row;
-  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+
+  .Logo {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@include tablet {
+  .HeaderBlock {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .Header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .ImgWrapper {
+    width: 10rem;
+    height: 10rem;
+    align-self: auto;
+  }
+
+  .Content {
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .TextBlock {
+    text-align: center;
+  }
 }

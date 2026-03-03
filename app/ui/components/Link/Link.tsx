@@ -1,32 +1,49 @@
-import type React from "react";
+import React from "react";
 import s from "./Link.module.scss";
 import { Link as RouterLink } from "react-router";
 import clsx from "clsx";
+import { Slot } from "@radix-ui/react-slot";
 
 export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   to?: string;
 }
 
-const Link: React.FC<LinkProps> = ({
-  to,
-  href,
-  className,
-  children,
-  ...props
-}) => {
-  const classList = clsx(s.link, className);
-  if (to)
+export interface LinkProps extends React.ComponentPropsWithoutRef<"a"> {
+  to?: string;
+  asChild?: boolean;
+}
+
+const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
+  ({ to, href, asChild, className, children, ...props }, ref) => {
+    const classes = clsx(s.link, "link", className);
+
+    // режим Slot
+    if (asChild) {
+      return (
+        <Slot ref={ref} className={classes} {...props}>
+          {children}
+        </Slot>
+      );
+    }
+
+    // react-router
+    if (to) {
+      return (
+        <RouterLink ref={ref as any} to={to} className={classes} {...props}>
+          {children}
+        </RouterLink>
+      );
+    }
+
+    // обычная ссылка
     return (
-      <RouterLink to={to} className={classList} {...props}>
+      <a ref={ref} href={href} className={classes} {...props}>
         {children}
-      </RouterLink>
-    );
-  else
-    return (
-      <a href={href} className={classList} {...props}>
-        <span>{children}</span>
       </a>
     );
-};
+  },
+);
+
+Link.displayName = "Link";
 
 export default Link;

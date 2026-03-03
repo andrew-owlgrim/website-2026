@@ -1,0 +1,11 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.SettingsSmall {
+  @include row;
+  gap: 1rem;
+}
+
+.SettingsLarge {
+  @include row;
+  gap: 0.5rem;
+}
