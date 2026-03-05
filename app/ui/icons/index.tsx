@@ -25,6 +25,8 @@ import Dribbble from "./dribbble.svg?react";
 import Behance from "./behance.svg?react";
 import Github from "./github.svg?react";
 import Quote from "./quote.svg?react";
+import Menu from "./menu.svg?react";
+import Home from "./home.svg?react";
 
 // Library
 
@@ -54,6 +56,8 @@ export const icons = {
   behance: Behance,
   github: Github,
   quote: Quote,
+  menu: Menu,
+  home: Home,
 } as const;
 
 export type IconName = keyof typeof icons;

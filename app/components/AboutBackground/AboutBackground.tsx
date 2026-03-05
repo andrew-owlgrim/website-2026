@@ -7,85 +7,127 @@ import IconCode from "@/assets/img/about-page/code.svg?react";
 import Link from "@/ui/components/Link/Link";
 import clsx from "clsx";
 import { useI18n } from "@/i18n";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { useScreen } from "@/ui/provider/useScreen";
+import { useEffect, useRef } from "react";
 
 export default function AboutBackground() {
   const { t } = useI18n();
+  const { screen } = useScreen();
+
+  const swiperRef = useRef<any>(null);
+
+  useEffect(() => {
+    const swiper = swiperRef.current;
+    if (!swiper) return;
+
+    const allow = screen !== "desktop";
+
+    swiper.allowTouchMove = allow;
+    swiper.params.allowTouchMove = allow;
+
+    swiper.update();
+  }, [screen]);
+
+  const swiperProps: Record<string, any> = {};
+  if (screen === "desktop") {
+    swiperProps.slidesPerView = 3;
+    swiperProps.allowTouchMove = false;
+  } else if (screen === "tablet") {
+    swiperProps.slidesPerView = 2;
+    swiperProps.allowTouchMove = true;
+  } else {
+    swiperProps.slidesPerView = 1;
+    swiperProps.allowTouchMove = true;
+  }
 
   return (
     <section id="background" className={clsx("page-block", s.BackgroundBlock)}>
       <div className={s.BlockContent}>
         <h2 className={s.SectionTitle}>{t["background.title"]}</h2>
-        <div className={s.CardsContainer}>
-          <BackgroundCard
-            icon={<IconCam />}
-            occupation={t["background.card1.occupation"]}
-            title={t["background.card1.title"]}
-            description={
-              <>
-                {t["background.card1.description.0"]}
-                <Link
-                  href="https://www.youtube.com/@Sivprod-Minecraft/"
-                  target="blank"
-                  rel="norefferer noopener"
-                >
-                  {t["background.card1.description.1"]}
-                </Link>
-                {t["background.card1.description.2"]}
-                <em>{t["background.card1.description.3"]}</em>
-                {t["background.card1.description.4"]}
-                <em>{t["background.card1.description.5"]}</em>
-                {t["background.card1.description.6"]}
-              </>
-            }
-            date={t["background.card1.date"]}
-          />
-          <BackgroundCard
-            icon={<IconWork />}
-            occupation={t["background.card2.occupation"]}
-            title={t["background.card2.title"]}
-            description={
-              <>
-                {t["background.card2.description.0"]}
-                <Link
-                  href="https://limera.ru"
-                  target="blank"
-                  rel="norefferer noopener"
-                >
-                  {t["background.card2.description.1"]}
-                </Link>
-                {t["background.card2.description.2"]}
-                <Link
-                  href="https://dzencode.com"
-                  target="blank"
-                  rel="norefferer noopener"
-                >
-                  {t["background.card2.description.3"]}
-                </Link>
-                {t["background.card2.description.4"]}
-              </>
-            }
-            date={t["background.card2.date"]}
-          />
-          <BackgroundCard
-            icon={<IconCode />}
-            occupation={t["background.card3.occupation"]}
-            title={t["background.card3.title"]}
-            description={
-              <>
-                {t["background.card3.description.0"]}
-                <Link
-                  href="https://ampersand-it.com/"
-                  target="blank"
-                  rel="norefferer noopener"
-                >
-                  {t["background.card3.description.1"]}
-                </Link>
-                {t["background.card3.description.2"]}
-              </>
-            }
-            date={t["background.card3.date"]}
-          />
-        </div>
+        <Swiper
+          className={s.Slider}
+          spaceBetween={8}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          {...swiperProps}
+        >
+          <SwiperSlide>
+            <BackgroundCard
+              icon={<IconCam />}
+              occupation={t["background.card1.occupation"]}
+              title={t["background.card1.title"]}
+              description={
+                <>
+                  {t["background.card1.description.0"]}
+                  <Link
+                    href="https://www.youtube.com/@Sivprod-Minecraft/"
+                    target="blank"
+                    rel="norefferer noopener"
+                  >
+                    {t["background.card1.description.1"]}
+                  </Link>
+                  {t["background.card1.description.2"]}
+                  <em>{t["background.card1.description.3"]}</em>
+                  {t["background.card1.description.4"]}
+                  <em>{t["background.card1.description.5"]}</em>
+                  {t["background.card1.description.6"]}
+                </>
+              }
+              date={t["background.card1.date"]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <BackgroundCard
+              icon={<IconWork />}
+              occupation={t["background.card2.occupation"]}
+              title={t["background.card2.title"]}
+              description={
+                <>
+                  {t["background.card2.description.0"]}
+                  <Link
+                    href="https://limera.ru"
+                    target="blank"
+                    rel="norefferer noopener"
+                  >
+                    {t["background.card2.description.1"]}
+                  </Link>
+                  {t["background.card2.description.2"]}
+                  <Link
+                    href="https://dzencode.com"
+                    target="blank"
+                    rel="norefferer noopener"
+                  >
+                    {t["background.card2.description.3"]}
+                  </Link>
+                  {t["background.card2.description.4"]}
+                </>
+              }
+              date={t["background.card2.date"]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <BackgroundCard
+              icon={<IconCode />}
+              occupation={t["background.card3.occupation"]}
+              title={t["background.card3.title"]}
+              description={
+                <>
+                  {t["background.card3.description.0"]}
+                  <Link
+                    href="https://ampersand-it.com/"
+                    target="blank"
+                    rel="norefferer noopener"
+                  >
+                    {t["background.card3.description.1"]}
+                  </Link>
+                  {t["background.card3.description.2"]}
+                </>
+              }
+              date={t["background.card3.date"]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </section>
   );

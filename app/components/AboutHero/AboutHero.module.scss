@@ -2,20 +2,23 @@
 
 .HeroBlock {
   padding-top: 6rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2.5rem;
 }
 
 .BlockContent {
   position: relative;
   z-index: 1;
+  text-align: center;
 
   @include col;
+  align-items: center;
   gap: 1.5rem;
 }
 
 .TopRow {
   @include row;
-  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 }
 
 .Title {
@@ -26,13 +29,14 @@
 }
 
 .Subtitle {
+  margin-top: 1rem;
   color: var(--color-alt-sec);
 }
 
 .ImgWrapper {
   position: relative;
   width: auto;
-  height: 100%;
+  height: 8rem;
   aspect-ratio: 1;
 }
 
@@ -46,31 +50,61 @@
 
 .Shape {
   position: absolute;
-  width: calc(100% + 3rem);
-  height: calc(100% + 3rem);
-  inset: -1.5rem;
+  width: calc(100% + 2rem);
+  height: calc(100% + 2rem);
+  inset: -1rem;
   color: var(--color-bg);
-}
-
-.Actions {
-  @include col;
-  gap: 1rem;
-  justify-content: center;
 }
 
 .Description {
-  margin-top: 2.5rem;
-  max-width: 560px;
+  max-width: calc(var(--content-width) / 12 * 10);
   @include lead;
 }
 
-.Illustration {
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  bottom: 0;
-  width: 360px;
-  height: auto;
+.Actions {
+  margin-top: 1rem;
+  @include row;
+  gap: 0.5rem;
+  justify-content: center;
+}
 
-  color: var(--color-bg);
+@include tablet {
+  .Title {
+    font-size: 4rem;
+  }
+}
+
+@include mobile {
+  .HeroBlock {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .BlockContent {
+    gap: 0;
+  }
+
+  .ImgBlock {
+    margin-bottom: 4rem;
+  }
+
+  .ImgWrapper {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .Title {
+    @include h2;
+    white-space: nowrap;
+  }
+
+  .Subtitle {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    @include h5;
+  }
+
+  .Actions {
+    margin-top: 1.5rem;
+  }
 }

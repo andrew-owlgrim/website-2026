@@ -1,0 +1,76 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.HeroBlock {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.BlockContent {
+  position: relative;
+  z-index: 1;
+
+  @include col;
+  gap: 1.5rem;
+}
+
+.TopRow {
+  @include row;
+  justify-content: space-between;
+}
+
+.Title {
+  font-size: 6rem;
+  line-height: 1;
+
+  white-space: pre-line;
+}
+
+.Subtitle {
+  color: var(--color-alt-sec);
+}
+
+.ImgWrapper {
+  position: relative;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1;
+}
+
+.ImgWrapper > img {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 666px;
+}
+
+.Shape {
+  position: absolute;
+  width: calc(100% + 3rem);
+  height: calc(100% + 3rem);
+  inset: -1.5rem;
+  color: var(--color-bg);
+}
+
+.Actions {
+  @include col;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.Description {
+  margin-top: 2.5rem;
+  max-width: 560px;
+  @include lead;
+}
+
+.Illustration {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  width: 360px;
+  height: auto;
+
+  color: var(--color-bg);
+}

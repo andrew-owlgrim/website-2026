@@ -49,13 +49,13 @@ export function NavbarItem({ id, children, className }: NavItemProps) {
     >
       {children}
 
-      {isActive && (
+      {/* {isActive && (
         <motion.div
           layoutId="nav-indicator"
           className={s.Indicator}
           transition={{ type: "spring", stiffness: 500, damping: 40 }}
         />
-      )}
+      )} */}
     </a>
   );
 }

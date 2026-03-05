@@ -38,6 +38,7 @@
     & > li {
       position: relative;
       margin-left: 1.5rem;
+      line-height: 1.5rem;
     }
 
     & > li::before {
@@ -48,5 +49,21 @@
       text-align: center;
       color: var(--color-sec);
     }
+  }
+}
+
+@include tablet {
+  .Terms {
+    padding: 2.5rem;
+  }
+}
+
+@include mobile {
+  .Terms {
+    padding: 1.5rem;
+  }
+
+  h3 {
+    @include h4;
   }
 }

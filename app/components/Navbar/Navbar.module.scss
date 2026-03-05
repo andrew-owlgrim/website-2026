@@ -3,7 +3,7 @@
 .Navbar {
   @include row;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0rem;
 }
 
 .Item {
@@ -12,12 +12,19 @@
   @include row;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
+
+  @include button;
 
   transition: var(--transition-sm);
+  border-radius: 666px;
 
   &:hover {
     background: var(--color-surface);
+  }
+
+  &:active {
+    background: color-mix(in srgb, var(--color-surface), var(--color-fx) 15%);
   }
 }
 

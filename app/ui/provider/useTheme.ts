@@ -9,6 +9,8 @@ const KEY = "theme";
 // Utils
 
 function detectTheme(): Theme {
+  if (typeof window === "undefined") return "dark"; // сервер
+
   return (
     (localStorage.getItem(KEY) as Theme) ||
     (window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -20,7 +22,7 @@ function detectTheme(): Theme {
 // Hook
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>(() => detectTheme());
 
   // init
   useLayoutEffect(() => {

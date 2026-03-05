@@ -1,7 +1,8 @@
 @use "@/ui/styles/utils.scss" as *;
 
-.BackgroundBlock {
-  padding: 4rem 0;
+.Block {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .BlockContent {
@@ -71,21 +72,27 @@
 
   border-radius: 1rem;
 
-  :global(.swiper-slide) {
-    pointer-events: none;
-  }
-
-  &.showOverflow {
-    overflow: visible !important;
-
+  &:not(.Mobile) {
     :global(.swiper-slide) {
-      opacity: 0;
       pointer-events: none;
     }
-    :global(.swiper-slide-visible) {
-      opacity: 1;
-      pointer-events: auto;
+
+    &.showOverflow {
+      overflow: visible !important;
+
+      :global(.swiper-slide) {
+        opacity: 0;
+        pointer-events: none;
+      }
+      :global(.swiper-slide-visible) {
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
+  }
+
+  &.Mobile {
+    overflow: visible !important;
   }
 }
 
@@ -114,4 +121,21 @@
 
 .SliderRight {
   right: -3.5rem;
+}
+
+@include mobile {
+  .Block {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .SliderLeft,
+  .SliderRight {
+    display: none;
+  }
+
+  .Buttons > * {
+    flex: 1 1 0;
+    min-width: 0;
+  }
 }

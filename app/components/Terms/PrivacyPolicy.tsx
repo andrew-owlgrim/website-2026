@@ -119,7 +119,9 @@ const PrivacyPolicy: FC = () => {
           <li>
             <p>{t["privacy.section.6.text.1"]}</p>
           </li>
-          <li>{t["privacy.section.6.text.2"]}</li>
+          <li>
+            <p>{t["privacy.section.6.text.2"]}</p>
+          </li>
         </ul>
       </section>
       <section>

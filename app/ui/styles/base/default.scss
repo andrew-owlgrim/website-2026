@@ -65,7 +65,8 @@ p {
   @include caption;
 }
 
-strong {
+strong,
+.bold {
   font-weight: var(--weight-medium);
 }
 

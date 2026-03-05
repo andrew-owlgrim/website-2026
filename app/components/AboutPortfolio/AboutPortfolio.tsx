@@ -14,9 +14,11 @@ import justfitPreview from "@/assets/img/about-page/portfolio/justfit-preview.we
 import limeraPreview from "@/assets/img/about-page/portfolio/limera-preview.webp";
 import mobileAppsPreview from "@/assets/img/about-page/portfolio/mobile-apps-preview.webp";
 import sivprodPreview from "@/assets/img/about-page/portfolio/sivprod-preview.webp";
+import { useUI } from "@/ui/provider/UIProvider";
 
 export default function AboutPortfolio() {
   const { t } = useI18n();
+  const { screen } = useUI();
 
   const swiperRef = useRef<any>(null);
 
@@ -30,50 +32,21 @@ export default function AboutPortfolio() {
   }, [transition, touch]);
 
   return (
-    <section id="portfolio" className={clsx("page-block", s.BackgroundBlock)}>
+    <section id="portfolio" className={clsx("page-block", s.Block)}>
       <div className={s.BlockContent}>
         <div className={s.Header}>
           <h2 className={s.SectionTitle}>{t["portfolio.title"]}</h2>
-          <div className={s.Buttons}>
-            <Button className={s.Behance} asChild>
-              <a
-                href="https://www.behance.net/andrew-owlgrim"
-                target="_blank"
-                rel="norefferer nofollow"
-              >
-                <Icon name="behance" />
-                <p>Behance</p>
-              </a>
-            </Button>
-            <Button className={s.Dribbble} asChild>
-              <a
-                href="https://dribbble.com/andrew-owlgrim"
-                target="_blank"
-                rel="norefferer nofollow"
-              >
-                <Icon name="dribbble" />
-                <p>Dribbble</p>
-              </a>
-            </Button>
-            <Button className={s.Github} asChild>
-              <a
-                href="https://github.com/andrew-owlgrim"
-                target="_blank"
-                rel="norefferer nofollow"
-              >
-                <Icon name="github" />
-                <p>Github</p>
-              </a>
-            </Button>
-          </div>
+          {screen !== "mobile" && <Buttons />}
         </div>
         <div className={s.Projects}>
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
-            slidesPerView={3}
+            slidesPerView={
+              screen === "mobile" ? 1 : screen === "tablet" ? 2 : 3
+            }
             slidesPerGroup={1}
             spaceBetween={8} //todo: rem units
-            loop
+            loop={screen !== "mobile"}
             watchSlidesProgress
             onTransitionStart={() => {
               setTransition(true);
@@ -82,7 +55,11 @@ export default function AboutPortfolio() {
             onTransitionEnd={() => setTransition(false)}
             onTouchStart={() => setTouch(true)}
             onTouchEnd={() => setTouch(false)}
-            className={clsx(s.Slider, !moving && s.showOverflow)}
+            className={clsx(
+              s.Slider,
+              !moving && s.showOverflow,
+              screen == "mobile" && s.Mobile,
+            )}
           >
             <SwiperSlide>
               <ProjectCard
@@ -152,7 +129,45 @@ export default function AboutPortfolio() {
             <Icon name="chevron-right" />
           </Button>
         </div>
+        {screen === "mobile" && <Buttons />}
       </div>
     </section>
+  );
+}
+
+function Buttons() {
+  return (
+    <div className={s.Buttons}>
+      <Button className={s.Behance} asChild>
+        <a
+          href="https://www.behance.net/andrew-owlgrim"
+          target="_blank"
+          rel="norefferer nofollow"
+        >
+          <Icon name="behance" />
+          <p>Behance</p>
+        </a>
+      </Button>
+      <Button className={s.Dribbble} asChild>
+        <a
+          href="https://dribbble.com/andrew-owlgrim"
+          target="_blank"
+          rel="norefferer nofollow"
+        >
+          <Icon name="dribbble" />
+          <p>Dribbble</p>
+        </a>
+      </Button>
+      <Button className={s.Github} asChild>
+        <a
+          href="https://github.com/andrew-owlgrim"
+          target="_blank"
+          rel="norefferer nofollow"
+        >
+          <Icon name="github" />
+          <p>Github</p>
+        </a>
+      </Button>
+    </div>
   );
 }

@@ -2,7 +2,7 @@ import clsx from "clsx";
 import s from "./AboutSkills.module.scss";
 import { DonutChart } from "./DonutChart";
 import { useI18n } from "@/i18n";
-import { useMemo, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 // icons
 
@@ -10,7 +10,6 @@ import blenderLogo from "@/assets/img/about-page/logos/blender.svg";
 import chatGptLogo from "@/assets/img/about-page/logos/chat-gpt_mono.svg";
 import cssLogo from "@/assets/img/about-page/logos/css.svg";
 import davinciResolveLogo from "@/assets/img/about-page/logos/davinci-resolve.svg";
-import davinciResolveMonoLogo from "@/assets/img/about-page/logos/davinci-resolve_mono.svg";
 import figmaLogo from "@/assets/img/about-page/logos/figma.svg";
 import flLogo from "@/assets/img/about-page/logos/fl.svg";
 import flMonoLogo from "@/assets/img/about-page/logos/fl_mono.svg";
@@ -18,7 +17,6 @@ import geminiMonoLogo from "@/assets/img/about-page/logos/gemini_mono.svg";
 import gitLogo from "@/assets/img/about-page/logos/git.svg";
 import godotLogo from "@/assets/img/about-page/logos/godot.svg";
 import htmlLogo from "@/assets/img/about-page/logos/html.svg";
-import miroLogo from "@/assets/img/about-page/logos/miro.svg";
 import motionLogo from "@/assets/img/about-page/logos/motion.svg";
 import notionLogo from "@/assets/img/about-page/logos/notion.svg";
 import copilotLogo from "@/assets/img/about-page/logos/octicon_copilot-16.svg";

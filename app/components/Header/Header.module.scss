@@ -1,7 +1,8 @@
 @use "@/ui/styles/utils.scss" as *;
 
 .Header {
-  padding: 2rem 0;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .Content {
@@ -21,12 +22,16 @@
 .Left {
   @include row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .Logo {
-  width: 2rem;
-  height: 2rem;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.Slash {
+  color: var(--color-third);
 }
 
 .BreadCrumbs_Chevron {
@@ -38,8 +43,19 @@
 }
 
 .Right {
-  @include row;
-  align-items: center;
   justify-content: end;
-  gap: 1rem;
+}
+
+@include tablet {
+  .Right :global(.icon) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@include mobile {
+  .Header {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
