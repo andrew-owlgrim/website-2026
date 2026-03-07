@@ -102,10 +102,6 @@
   &:disabled {
     background: var(--color-inactive);
   }
-
-  &:focus-visible {
-    outline-color: var(--color-main-hover);
-  }
 }
 
 // Secondary
@@ -178,7 +174,12 @@
   color: var(--color);
   background: transparent;
 
-  &:hover,
+  @media (pointer: fine) {
+    &:hover {
+      background: var(--color-surface);
+    }
+  }
+
   &:focus-visible {
     background: var(--color-surface);
   }

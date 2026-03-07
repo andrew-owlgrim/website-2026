@@ -45,6 +45,7 @@
 }
 
 .Content {
+  z-index: 48;
   min-width: var(--radix-select-trigger-width);
   max-height: 360px;
 

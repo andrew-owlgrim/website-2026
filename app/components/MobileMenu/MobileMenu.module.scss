@@ -1,0 +1,60 @@
+@use "@/ui/styles/utils.scss" as *;
+
+.Overlay {
+  z-index: 15;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: color-mix(in srgb, transparent, var(--color-main) 25%);
+}
+
+.Content {
+  z-index: 16;
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  max-height: calc(100vh - 1rem);
+
+  @include col;
+  gap: 4rem;
+  padding: 1rem;
+
+  background: var(--color-bg);
+  border-radius: 0.75rem;
+}
+
+.Header {
+  @include row;
+  align-items: center;
+  gap: 1.5rem;
+
+  .Logo {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  h5 {
+    flex: 1 0 0;
+    min-width: 0;
+    text-align: center;
+  }
+
+  :global(.icon) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.Main {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.Footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-third);
+  justify-content: center;
+}

@@ -1,4 +1,10 @@
-import { createContext, useContext, Children, isValidElement } from "react";
+import {
+  createContext,
+  useContext,
+  Children,
+  isValidElement,
+  type MouseEvent,
+} from "react";
 import { motion } from "motion/react";
 import clsx from "clsx";
 
@@ -36,16 +42,29 @@ type NavItemProps = {
   id: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: Function;
 };
 
-export function NavbarItem({ id, children, className }: NavItemProps) {
+export function NavbarItem({ id, children, className, onClick }: NavItemProps) {
   const { active } = useContext(NavbarContext);
   const isActive = active === id;
+
+  function handleClick(e: MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }, 50);
+
+    onClick?.();
+  }
 
   return (
     <a
       href={`#${id}`}
       className={clsx(s.Item, className, isActive && s.active)}
+      onClick={handleClick}
     >
       {children}
 

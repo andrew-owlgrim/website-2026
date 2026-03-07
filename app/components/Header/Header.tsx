@@ -8,10 +8,19 @@ import clsx from "clsx";
 import { useUI } from "@/ui/provider/UIProvider";
 import { useI18n } from "@/i18n";
 import { SiteSettings } from "../SiteSettings/SiteSettings";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 function Header() {
   const { t } = useI18n();
   const { screen } = useUI();
+
+  const sections = [
+    ["background", t["header.background"]],
+    ["skills", t["header.skills"]],
+    ["portfolio", t["header.portfolio"]],
+    ["manifesto", t["header.manifesto"]],
+    ["contact", t["header.contact"]],
+  ];
 
   return (
     <header className={clsx("page-block", s.Header)}>
@@ -31,11 +40,11 @@ function Header() {
             </Button>
           </div>
           <Navbar>
-            <NavbarItem id="background">{t["header.background"]}</NavbarItem>
-            <NavbarItem id="skills">{t["header.skills"]}</NavbarItem>
-            <NavbarItem id="portfolio">{t["header.portfolio"]}</NavbarItem>
-            <NavbarItem id="manifesto">{t["header.manifesto"]}</NavbarItem>
-            <NavbarItem id="contact">{t["header.contact"]}</NavbarItem>
+            {sections.map((section, i) => (
+              <NavbarItem key={i} id={section[0]}>
+                {section[1]}
+              </NavbarItem>
+            ))}
           </Navbar>
           <SiteSettings size="sm" className={s.Right} />
         </div>
@@ -52,9 +61,7 @@ function Header() {
             </RouterLink>
           </div>
           <div className={s.Right}>
-            <Button variant="ghost">
-              <Icon name="menu" />
-            </Button>
+            <MobileMenu title={t["header.about"]} sections={sections} />
           </div>
         </div>
       )}
