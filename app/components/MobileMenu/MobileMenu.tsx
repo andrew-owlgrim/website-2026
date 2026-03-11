@@ -8,8 +8,6 @@ import { SiteSettings } from "../SiteSettings/SiteSettings";
 import { useState } from "react";
 import { Link } from "react-router";
 
-type Sections = [id: string, label: string][];
-
 export default function MobileMenu({
   title,
   sections,

@@ -19,9 +19,8 @@
   --color-bg: var(--color-white);
   --color-alt: var(--color-gray-90);
   --color-surface: hsl(220 30 70 / 0.33);
-  --color-third: hsl(220 35 40 / 0.5);
+  --color-tert: hsl(220 35 40 / 0.5);
   --color-sec: hsl(220 40 20 / 0.75);
-  --color-alt-sec: var(--color-gray-10);
   --color-primary: var(--color-gray-20);
   --color-main: var(--color-gray-10);
   --color-fx: var(--color-gray-50);
@@ -31,9 +30,8 @@
   --color-bg: var(--color-gray-20);
   --color-alt: var(--color-gray-10);
   --color-surface: color-mix(in srgb, transparent, var(--color-gray-90) 15%);
-  --color-third: color-mix(in srgb, transparent, var(--color-gray-90) 40%);
+  --color-tert: color-mix(in srgb, transparent, var(--color-gray-90) 40%);
   --color-sec: color-mix(in srgb, transparent, var(--color-gray-90) 75%);
-  --color-alt-sec: color-mix(in srgb, transparent, var(--color-gray-90) 75%);
   --color-main: var(--color-white);
   --color-primary: var(--color-gray-90);
   --color-fx: var(--color-gray-50);

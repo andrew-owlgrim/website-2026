@@ -3,6 +3,7 @@ import clsx from "clsx";
 import type { FC, ReactNode, ComponentPropsWithoutRef } from "react";
 import s from "./DropdownMenu.module.scss";
 import Icon, { type IconName } from "../../icons";
+import { useUI } from "@/ui/provider/UIProvider";
 
 // Root
 
@@ -25,11 +26,13 @@ export const DropdownMenu: FC<DropdownMenuProps> = ({
   className,
   side = "bottom",
   align = "center",
-  sideOffset = 4, //todo: replace to rem units
+  sideOffset,
   alignOffset = 0,
   arrow = false,
   ...props
 }) => {
+  const { rem } = useUI();
+
   return (
     <Radix.Root {...props}>
       <Radix.Trigger asChild>{trigger}</Radix.Trigger>
@@ -39,7 +42,7 @@ export const DropdownMenu: FC<DropdownMenuProps> = ({
           className={clsx(s.dropdown, "dropdown", className)}
           side={side}
           align={align}
-          sideOffset={sideOffset}
+          sideOffset={sideOffset ?? 0.25 * rem}
           alignOffset={alignOffset}
           onClick={(e) => {
             e.stopPropagation();

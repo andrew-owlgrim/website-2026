@@ -9,12 +9,12 @@ import clsx from "clsx";
 import { useI18n } from "@/i18n";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { useScreen } from "@/ui/provider/useScreen";
 import { useEffect, useRef } from "react";
+import { useUI } from "@/ui/provider/UIProvider";
 
 export default function AboutBackground() {
   const { t } = useI18n();
-  const { screen } = useScreen();
+  const { screen, rem } = useUI();
 
   const swiperRef = useRef<any>(null);
 
@@ -48,7 +48,7 @@ export default function AboutBackground() {
         <h2 className={s.SectionTitle}>{t["background.title"]}</h2>
         <Swiper
           className={s.Slider}
-          spaceBetween={8}
+          spaceBetween={0.5 * rem}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           {...swiperProps}
         >

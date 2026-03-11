@@ -6,7 +6,7 @@
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: color-mix(in srgb, transparent, var(--color-main) 25%);
+  background: color-mix(in srgb, transparent, var(--color-gray-10) 25%);
 }
 
 .Content {
@@ -55,6 +55,6 @@
 
 .Footer {
   padding-top: 1rem;
-  border-top: 1px solid var(--color-third);
+  border-top: 1px solid var(--color-tert);
   justify-content: center;
 }

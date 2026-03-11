@@ -43,6 +43,7 @@
 .Dribbble,
 .Github {
   background: var(--fill);
+  color: var(--color-white);
   &:hover,
   &:focus-visible {
     background: hsl(from var(--fill) h s calc(l - 10));

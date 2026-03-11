@@ -36,7 +36,7 @@
   height: 12rem;
   height: auto;
   flex-shrink: 0;
-  color: var(--color-alt-sec);
+  color: var(--color-main);
 }
 
 @include tablet {
@@ -49,6 +49,11 @@
   .ContactBlock {
     padding-top: 3rem;
     padding-bottom: 3rem;
+    text-align: center;
+  }
+
+  .CTA {
+    align-items: center;
   }
 
   .BlockContent {

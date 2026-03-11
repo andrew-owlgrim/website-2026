@@ -1,7 +1,7 @@
 import Button from "@/ui/components/Button/Button";
 import s from "./AboutContact.module.scss";
 import Icon from "@/ui/icons";
-import Illustation from "@/assets/img/about-page/about-contact-illustration.svg?react";
+import Illustation from "@/assets/img/about-page/wink.svg?react";
 import clsx from "clsx";
 import { useI18n } from "@/i18n";
 

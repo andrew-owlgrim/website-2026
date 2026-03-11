@@ -2,7 +2,6 @@
 
 @mixin heading {
   letter-spacing: normal;
-  text-transform: capitalize;
   font-weight: var(--weight-medium);
 }
 
@@ -10,11 +9,13 @@
   @include heading;
   font-size: var(--fs-h1);
   line-height: var(--lh-h1);
+  text-transform: capitalize;
 }
 @mixin h2 {
   @include heading;
   font-size: var(--fs-h2);
   line-height: var(--lh-h2);
+  text-transform: capitalize;
 }
 @mixin h3 {
   @include heading;
@@ -62,7 +63,6 @@
 
 @mixin button {
   letter-spacing: 0.05em;
-  text-transform: capitalize;
   font-weight: var(--weight-medium);
   font-size: var(--fs-md);
   line-height: var(--lh-md);

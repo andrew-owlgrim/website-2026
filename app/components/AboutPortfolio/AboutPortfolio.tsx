@@ -18,7 +18,7 @@ import { useUI } from "@/ui/provider/UIProvider";
 
 export default function AboutPortfolio() {
   const { t } = useI18n();
-  const { screen } = useUI();
+  const { screen, rem } = useUI();
 
   const swiperRef = useRef<any>(null);
 
@@ -45,7 +45,7 @@ export default function AboutPortfolio() {
               screen === "mobile" ? 1 : screen === "tablet" ? 2 : 3
             }
             slidesPerGroup={1}
-            spaceBetween={8} //todo: rem units
+            spaceBetween={0.5 * rem}
             loop={screen !== "mobile"}
             watchSlidesProgress
             onTransitionStart={() => {

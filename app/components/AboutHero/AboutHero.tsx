@@ -4,7 +4,6 @@ import userpic from "@/assets/img/urerpic.jpg";
 import Icon from "@/ui/icons";
 
 import Shape from "@/assets/img/about-page/shape-badge.svg?react";
-import Illustration from "@/assets/img/about-page/about-hero-illustration.svg?react";
 import clsx from "clsx";
 import { useI18n } from "@/i18n";
 import { useUI } from "@/ui/provider/UIProvider";

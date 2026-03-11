@@ -4,6 +4,7 @@ import clsx from "clsx";
 
 import s from "./select.module.scss";
 import Icon from "@/ui/icons";
+import { useUI } from "@/ui/provider/UIProvider";
 
 // Select
 
@@ -22,6 +23,8 @@ export function Select({
   shape = "square",
   ...props
 }: RootProps) {
+  const { rem } = useUI();
+
   return (
     <SelectPrimitive.Root {...props}>
       <SelectPrimitive.Trigger className={clsx(s.Select, s[shape], className)}>
@@ -35,7 +38,7 @@ export function Select({
         <SelectPrimitive.Content
           className={s.Content}
           position="popper"
-          sideOffset={4} //todo: replace to rem units
+          sideOffset={0.25 * rem}
         >
           <SelectPrimitive.Viewport className={s.viewport}>
             {children}

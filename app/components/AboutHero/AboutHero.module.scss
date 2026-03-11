@@ -30,7 +30,7 @@
 
 .Subtitle {
   margin-top: 1rem;
-  color: var(--color-alt-sec);
+  color: var(--color-main);
 }
 
 .ImgWrapper {
@@ -54,6 +54,10 @@
   height: calc(100% + 2rem);
   inset: -1rem;
   color: var(--color-bg);
+}
+
+[data-theme="dark"] .Shape {
+  color: var(--color-primary);
 }
 
 .Description {

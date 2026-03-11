@@ -6,7 +6,7 @@
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: color-mix(in srgb, transparent, var(--color-main) 25%);
+  background: color-mix(in srgb, transparent, var(--color-gray-10) 25%);
 }
 
 .content {
@@ -35,8 +35,8 @@
   background: var(--color-bg);
   border-radius: 1.5rem;
   box-shadow:
-    0 0.75rem 1.5rem color-mix(in srgb, transparent, var(--color-main) 15%),
-    0 1.5rem 3rem color-mix(in srgb, transparent, var(--color-main) 15%);
+    0 0.75rem 1.5rem color-mix(in srgb, transparent, var(--color-gray-10) 15%),
+    0 1.5rem 3rem color-mix(in srgb, transparent, var(--color-gray-10) 15%);
 
   pointer-events: auto;
 
@@ -45,6 +45,12 @@
     top: 0.5rem;
     right: 0.5rem;
   }
+}
+
+[data-theme="dark"] .contentCard {
+  box-shadow:
+    0 0.75rem 1.5rem color-mix(in srgb, transparent, var(--color-gray-10) 25%),
+    0 1.5rem 3rem color-mix(in srgb, transparent, var(--color-gray-10) 25%);
 }
 
 @include mobile {
