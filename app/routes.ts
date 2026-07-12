@@ -8,4 +8,5 @@ export default [
   route("game-theory", "routes/game-theory.tsx"),
   route("minesweeper", "routes/minesweeper.tsx"),
   route("brick-breaker", "routes/brick-breaker.tsx"),
+  route("board-game", "routes/board-game.tsx"),
 ] satisfies RouteConfig;
