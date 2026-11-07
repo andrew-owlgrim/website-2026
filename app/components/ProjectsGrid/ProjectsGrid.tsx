@@ -25,7 +25,7 @@ const ProjectsGrid = () => {
           size="lg"
           imgUrl={PlannerImg}
           className={s.GridItem_lg}
-          href="https://owlgrim-planner.web.app/"
+          href="https://journal.owlgrim.app/"
           target="_blank"
           rel="noopener norefferer"
         />
